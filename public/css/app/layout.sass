@@ -1,0 +1,154 @@
+@import ../_define
+
+body
+  background-color: #fafafa
+  font-family: "Helvetica Neue", "HelveticaNeue", "Helvetica-Neue", "HelveticaNeue-Light", Arial, sans-serif
+  +borderbox
+
+*
+  -webkit-tap-highlight-color: transparent
+
+// outer wrapper
+.wrap
+  background-color: #fafafa
+  +borderbox
+  margin: 0
+  position: absolute
+  top: 0px
+  bottom: 0px
+  left: 0px
+  width: 100%
+  padding: 0
+
+// pages wrapper
+#pages            
+  height: 100%
+      
+.page
+  overflow: hidden
+  margin-top: $headerheight + 40px
+  margin-left: 0px
+  background-color: #fafafa
+  padding: 0
+  width: 100%
+  +borderbox
+
+// mobile open/close left panel
+.toggleView
+  position: fixed
+  top: 0
+
+// hidden in non-mobile
+.toggleView, .toggleWrap
+  display: none
+
+// top header
+.wrap > header
+  padding: 10px
+  height: $headerheight
+  position: fixed
+  width: 100%
+  left: 0
+  background-image: url(/img/bg-linen-dk.png)
+  border-bottom: 1px solid #fff
+  +borderbox
+  z-index: 100
+  &:before
+    content: ""
+    width: 100%
+    height: $headerheight
+    z-index: 100
+    position: fixed
+    top: 0
+    left: 0
+
+// right side content
+.mainContent      
+  margin-left: 300px
+  padding: 20px 20px 100px 20px
+
+  header
+    +gradient(#f3f3f3,#f0f0f0)
+    right: 0
+    left: 300px
+    border-bottom: 1px solid #c4c6c8
+
+.topic
+  border: 1px solid #aaa
+  +roundall(3px)
+  width: 120px
+  background: rgba(255,255,255,.5)
+
+.members .online, .ui-draggable-dragging
+  font-weight: bold
+  +gradient(#F0FBFF, #D2F2FF)
+  border-bottom: 1px solid #d2f2ff - #333
+  border-top: 1px solid #d2f2ff + #333
+  padding: 3px 7px
+  line-height: 1
+  font-size: 12px
+  +roundall(30px)
+
+.ui-draggable-dragging
+  line-height: .5
+  cursor: move
+
+.members
+  position: absolute
+  font-size: 12px
+  left: 150px
+  top: 8px
+
+  .online, .offline
+    display: inline-block
+    margin-right: 5px
+
+  .offline
+    font-style: italic
+    color: #333
+    +gradient(#eee, #e5e5e5)
+    border-bottom: 1px solid #eee - #333
+    border-top: 1px solid #eee + #333
+    padding: 3px 7px
+    line-height: 1
+    +roundall(30px)
+
+aside
+  margin: 0
+  padding-top: 40px
+
+aside header, section header
+  height: 30px
+  padding: 5px 10px 5px 10px
+  position: fixed
+  top: $headerheight
+  z-index: 1
+
+aside header
+  background: #dbdada
+  width: 280px
+  +shadow(rgba(0,0,0,.0),-3px,1px,0)
+  z-index: 100
+  top: $headerheight
+  border-bottom: 1px solid #999
+
+.loginDoor
+  background-image: url(/img/bg-linen-dk.png)
+  width: 51%
+  height: 100%
+  position: absolute
+  z-index: 1000
+  +transition(-webkit-transform .7s)
+  -webkit-transform: translateX(0px)
+
+  &.left
+    left: 0
+
+    &.open
+      -webkit-transform: translateX(-1500px)
+
+  &.right
+    right: 0
+
+    &.open
+      -webkit-transform: translateX(1500px)

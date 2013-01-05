@@ -1,0 +1,60 @@
+#videos {
+  position: fixed;
+  top: 104px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(/img/bg-linen-dk.png);
+  z-index: 10000;
+  padding: 20px;
+  box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 20px;
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 20px;
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 20px; }
+
+#local, #remote {
+  display: inline-block; }
+
+#remote {
+  width: 100%;
+  height: auto; }
+
+#local {
+  width: 30%;
+  position: absolute;
+  bottom: 20px;
+  right: 40px; }
+
+#localVideo, #remoteVideo {
+  width: 100%;
+  height: auto;
+  background-color: black;
+  float: left;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 20px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=20);
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid black;
+  border-right: 1px solid black; }
+
+.linkVideo footer {
+  position: fixed;
+  bottom: 20px;
+  z-index: 1000000;
+  display: block;
+  margin-left: 140px;
+  color: #cccccc;
+  text-shadow: black 0 1px 1px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=black,Direction=135,Strength=1);
+  padding: 0; }
+  .linkVideo footer p {
+    position: relative;
+    top: 10px; }
+  .linkVideo footer a:link, .linkVideo footer a:visited {
+    color: #cccccc; }
+  .linkVideo footer .logo:link, .linkVideo footer .logo:visited {
+    position: fixed;
+    left: 20px;
+    top: auto;
+    bottom: 20px !important; }

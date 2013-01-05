@@ -1,0 +1,14 @@
+#callStatus
+  img.callerAvatar(src= locals.picUrl)
+  h1.callerName= locals.caller
+  h2.callTime= 1:16:40
+  .callActions
+    button.callAccept(data-action="answer") Accept
+    button.callIgnore(data-action="ignore") Ignore
+    button.callEnd(data-action="hangUp") End Call
+    button.callCancel(data-action="hangUp") Cancel
+    button.callTake(data-action="take") Take Call
+    button.callPush(data-action="push") Push Call
+    button.callAddParty(data-action="addparty") Add Party
+    button.callMute(data-action="mute") Mute
+    button.callHold(data-action="hold") Hold

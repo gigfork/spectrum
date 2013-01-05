@@ -1,0 +1,2769 @@
+#dialog {
+  position: fixed;
+  left: 50%;
+  top: 20%;
+  z-index: 1000;
+  background-color: #fafafa;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=30);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -o-border-radius: 10px;
+  -border-radius: 10px;
+  border-radius: 10px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #777777; }
+  #dialog .content {
+    background-color: white;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    -o-border-radius: 7px;
+    -border-radius: 7px;
+    border-radius: 7px;
+    margin: 10px;
+    padding: 10px;
+    min-width: 300px;
+    min-height: 100px; }
+  #dialog .spinContainer {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px; }
+  #dialog h1 {
+    margin: 0 0 5px 0;
+    font-size: 26px;
+    font-weight: normal; }
+  #dialog p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em; }
+  #dialog.modal {
+    box-shadow: 0 1px 8px 0 black; }
+  #dialog .close {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    text-decoration: none;
+    color: #555555;
+    font-size: 25px;
+    font-weight: bold;
+    display: none;
+    line-height: 1;
+    background-color: rgba(200, 200, 200, 0.9);
+    padding: 0px 8px 7px 8px;
+    line-height: 1;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    -khtml-border-radius: 60px;
+    -o-border-radius: 60px;
+    -border-radius: 60px;
+    border-radius: 60px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=2); }
+  #dialog.closable .close {
+    display: block; }
+  #dialog .close:hover {
+    box-shadow: inset rgba(10, 0, 0, 0.5) 0 0 2px;
+    -moz-box-shadow: inset rgba(10, 0, 0, 0.5) 0 0 2px;
+    -webkit-box-shadow: inset rgba(10, 0, 0, 0.5) 0 0 2px;
+    background-color: white;
+    color: #dd0000; }
+  #dialog .close:active {
+    margin-top: 1px; }
+  #dialog.slide {
+    -webkit-transition: opacity 300ms, top 300ms;
+    -moz-transition: opacity 300ms, top 300ms; }
+    #dialog.slide.hide {
+      opacity: 0;
+      top: -500px; }
+  #dialog.fade {
+    -webkit-transition: opacity 300ms;
+    -moz-transition: opacity 300ms; }
+    #dialog.fade.hide {
+      opacity: 0; }
+  #dialog.scale {
+    -webkit-transition: -webkit-transform 300ms;
+    -moz-transition: -moz-transform 300ms;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); }
+    #dialog.scale.hide {
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0); }
+
+/* close */
+/* slide */
+/* fade */
+/* scale */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  transition: opacity 300ms;
+  z-index: 500; }
+  #overlay.hide {
+    pointer-events: none;
+    opacity: 0; }
+
+.confirmation .actions {
+  border-top: 1px solid #eeeeee;
+  padding: 5px;
+  text-align: right;
+  background: #fafafa;
+  box-shadow: inset 0 1px 0 white;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomleft: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -border-top-left-radius: 0;
+  -border-top-right-radius: 0;
+  -border-bottom-left-radius: 10px;
+  -border-bottom-right-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; }
+
+.color-picker canvas {
+  border: 1px solid #888888; }
+  .color-picker canvas:active {
+    cursor: none; }
+
+#notifications {
+  position: fixed;
+  top: 10px;
+  right: 15px; }
+  #notifications li {
+    margin-bottom: 5px;
+    list-style: none; }
+
+.notification {
+  position: relative;
+  max-width: 600px;
+  min-width: 250px;
+  border: 1px solid #eeeeee;
+  background: white;
+  z-index: 100; }
+  .notification .content {
+    padding: 15px 20px; }
+  .notification h1 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: normal; }
+  .notification p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em; }
+  .notification .close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    text-decoration: none;
+    color: #888888;
+    display: none; }
+  .notification.closable .close {
+    display: block; }
+  .notification .close {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    text-decoration: none;
+    color: #888888;
+    font-size: 16px;
+    font-weight: bold;
+    display: none; }
+    .notification .close:hover {
+      color: black; }
+    .notification .close:active {
+      margin-top: 1px; }
+  .notification.slide {
+    -webkit-transition: opacity 300ms, top 300ms;
+    -moz-transition: opacity 300ms, top 300ms; }
+    .notification.slide.hide {
+      opacity: 0;
+      top: -500px; }
+  .notification.fade {
+    -webkit-transition: opacity 300ms;
+    -moz-transition: opacity 300ms; }
+    .notification.fade.hide {
+      opacity: 0; }
+  .notification.scale {
+    -webkit-transition: -webkit-transform 300ms;
+    -moz-transition: -moz-transform 300ms;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); }
+    .notification.scale.hide {
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0); }
+
+/* close */
+/* slide */
+/* fade */
+/* scale */
+.split-button {
+  display: inline-block;
+  border: 1px solid #eeeeee; }
+  .split-button a {
+    display: inline-block;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px 10px;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; }
+  .split-button .toggle {
+    border-left: 1px solid #eeeeee; }
+    .split-button .toggle span {
+      display: block;
+      margin-top: 8px;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid #888888; }
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+  .menu li {
+    list-style: none; }
+    .menu li a {
+      display: block;
+      padding: 5px 30px 5px 12px;
+      text-decoration: none;
+      border-top: 1px solid #eeeeee;
+      color: #2e2e2e; }
+    .menu li:first-child a {
+      border-top: none; }
+    .menu li a:hover {
+      background: #f1faff; }
+
+/* from: http://desandro.github.com/3dtransforms */
+.card {
+  width: 200px;
+  height: 260px;
+  position: relative;
+  perspective: 800; }
+  .card .wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 500ms ease-in-out;
+    -moz-transition: -moz-transform 500ms ease-in-out;
+    border: 1px solid #eeeeee;
+    border-bottom-color: #cacaca;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 -1px 0 0 white, 0 1px 4px 0 #dddddd;
+    -moz-box-shadow: inset 0 -1px 0 0 white, 0 1px 4px 0 #dddddd; }
+  .card .face {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden; }
+  .card .back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg); }
+  .card.flipped .wrapper {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg); }
+  .card.sideflip .wrapper {
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center; }
+  .card.sideflip.flipped .wrapper {
+    -webkit-transform: translateX(-100%) rotateY(180deg);
+    -moz-transform: translateX(-100%) rotateY(180deg); }
+
+/* sideflip effect */
+#login {
+  text-align: center; }
+  #login p {
+    margin-bottom: 15px; }
+
+a:link, a:active {
+  color: #0086b1;
+  text-decoration: none; }
+
+a:visited {
+  color: #32b9e4; }
+
+a:hover {
+  color: #1097c2; }
+
+a.logo {
+  text-indent: -9999em;
+  width: 200px;
+  height: 35px;
+  background-image: url("/img/spectrum-logo.png");
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+a.logo:link, a.logo:visited, a.logout:link, a.logout:visited {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: black 0 1px 2px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=black,Direction=135,Strength=2);
+  z-index: 200; }
+
+a.logo:link, a.logo:visited {
+  top: 0px; }
+
+a.logout:link, a.logout:visited {
+  top: 10px;
+  font-size: 14px; }
+
+a.logout:link, a.logout:visited {
+  right: 20px; }
+
+a.logo:link, a.logo:visited {
+  left: 5px;
+  font-weight: bold; }
+
+a.logo:hover, a.logout:hover {
+  color: #1097c2; }
+
+.selectView {
+  position: fixed;
+  left: 300px;
+  z-index: 200;
+  padding: 0px 10px 0 170px;
+  top: 0px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .selectView a {
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: black 0 -1px 0px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=black,Direction=135,Strength=0);
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 3px 5px 5px 5px;
+    width: 80px;
+    display: inline-block;
+    text-align: center;
+    border-top: 3px solid transparent; }
+    .selectView a:before {
+      display: none; }
+    .selectView a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -40px;
+      -webkit-box-shadow: rgba(255, 255, 255, 0.18) 0 10px 10px;
+      -moz-box-shadow: rgba(255, 255, 255, 0.18) 0 10px 10px;
+      box-shadow: rgba(255, 255, 255, 0.18) 0 10px 10px;
+      -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.18),Direction=135,Strength=10);
+      -moz-border-radius: 40px;
+      -webkit-border-radius: 40px;
+      -khtml-border-radius: 40px;
+      -o-border-radius: 40px;
+      -border-radius: 40px;
+      border-radius: 40px;
+      height: 20px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box; }
+    .selectView a.selectMessages.selected {
+      color: white; }
+      .selectView a.selectMessages.selected:after {
+        left: 25px;
+        width: 80px;
+        top: -20px; }
+    .selectView a.selectFiles.selected {
+      color: white; }
+      .selectView a.selectFiles.selected:after {
+        left: 175px;
+        width: 80px;
+        top: -20px; }
+    .selectView a.selectLocation.selected {
+      color: white; }
+      .selectView a.selectLocation.selected:after {
+        left: 275px;
+        width: 80px;
+        top: -20px; }
+    .selectView a:hover, .selectView a.selected {
+      color: rgba(255, 255, 255, 0.85);
+      text-shadow: black 0 -1px 2px;
+      -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=black,Direction=135,Strength=2);
+      border-top: 3px solid #21a8d3; }
+
+.page h1, .page h2, .page li {
+  text-align: left; }
+.page h1 {
+  color: #333333; }
+.page h2 {
+  clear: both;
+  font-size: 20px;
+  padding-top: 10px;
+  margin: 0px 0 10px 0;
+  color: rgba(0, 0, 0, 0.3);
+  text-shadow: white 0 1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=white,Direction=135,Strength=0); }
+.page h3, .page h4 {
+  margin: 0; }
+.page dl {
+  clear: both;
+  font-size: 13px; }
+.page dt, .page dd {
+  padding-bottom: 5px; }
+.page dt {
+  width: 140px;
+  float: left;
+  text-indent: 35px;
+  text-transform: capitalize; }
+  .page dt:empty {
+    content: "";
+    height: 10px;
+    width: 140px; }
+.page dd {
+  margin: 0 0 20px 0;
+  font-weight: bold;
+  border-bottom: 1px solid #eeeeee; }
+.page .addContactTitle {
+  border-bottom: 2px groove rgba(255, 255, 255, 0.3); }
+.page .fieldContainer {
+  clear: both;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.3);
+  margin-bottom: 10px; }
+  .page .fieldContainer:first-child {
+    padding-top: 10px; }
+  .page .fieldContainer label {
+    float: left;
+    width: 140px;
+    font-size: 14px;
+    padding: 5px 0; }
+  .page .fieldContainer input {
+    float: left; }
+
+h1 {
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  color: #3690c0;
+  font-weight: 300;
+  line-height: 1; }
+
+h2 {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0 0 20px 0;
+  color: #777777; }
+
+h3 {
+  font-size: 14px; }
+
+.appList {
+  padding: 0;
+  list-style: none;
+  margin-top: 0; }
+  .appList .app {
+    padding: 10px 20px 10px 90px;
+    background-image: url(/img/white-soft-noise.png);
+    box-shadow: inset rgba(0, 0, 0, 0.3) 0 0 5px;
+    -moz-box-shadow: inset rgba(0, 0, 0, 0.3) 0 0 5px;
+    -webkit-box-shadow: inset rgba(0, 0, 0, 0.3) 0 0 5px;
+    border-bottom: 2px solid white;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -o-border-radius: 5px;
+    -border-radius: 5px;
+    border-radius: 5px;
+    position: relative; }
+  .appList .appImage {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 20px;
+    top: 20px; }
+  .appList .appName {
+    line-height: 1;
+    margin-top: 10px;
+    padding: 0; }
+  .appList p {
+    margin-top: 10px; }
+
+.appNote {
+  font-size: 13px; }
+  .appNote:before {
+    font-style: normal;
+    color: #41ade0; }
+
+.welcomePage {
+  margin-left: 300px;
+  background: #fafafa;
+  height: 100%; }
+  .welcomePage h1, .welcomePage h2, .welcomePage h3 {
+    margin: 10px;
+    text-align: center;
+    line-height: 1;
+    color: #555555; }
+  .welcomePage h1 {
+    margin-top: 20px;
+    width: 410px;
+    height: 130px;
+    background-image: url(/img/spectrum-logo-large.png);
+    text-indent: -9999em;
+    margin: 0 auto; }
+  .welcomePage h2 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 400; }
+  .welcomePage h3 {
+    font-size: 28px;
+    font-weight: 200;
+    color: #41ade0; }
+
+.aboutSpectrum {
+  max-width: 520px;
+  margin: 20px auto; }
+  .aboutSpectrum h4 {
+    font-size: 20px;
+    color: #555555; }
+  .aboutSpectrum p {
+    font-size: 16px;
+    color: #555555;
+    margin-top: 5px; }
+  .aboutSpectrum span {
+    font-size: 40px;
+    position: absolute;
+    left: 20px;
+    top: 35px; }
+  .aboutSpectrum span, .aboutSpectrum h4 {
+    text-shadow: white 0 1px 0px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=white,Direction=135,Strength=0); }
+  .aboutSpectrum div {
+    float: left;
+    width: 220px;
+    display: block;
+    min-width: 100px;
+    max-width: 350px;
+    padding: 20px 0px 0px 100px;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    .aboutSpectrum div:nth-child(odd) {
+      margin: 20px; }
+    .aboutSpectrum div:nth-child(even) {
+      margin: 20px; }
+
+.aboutSpectrum div:after {
+  position: absolute;
+  top: -3px;
+  left: 85px;
+  content: "";
+  min-height: 90px;
+  height: 90%;
+  width: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.06) -5px 0 10px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.06) -5px 0 10px;
+  box-shadow: rgba(0, 0, 0, 0.06) -5px 0 10px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.06),Direction=135,Strength=10);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 5px 0;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -o-border-radius: 10px;
+  -border-radius: 10px;
+  border-radius: 10px;
+  z-index: 1; }
+.aboutSpectrum div:before {
+  position: absolute;
+  top: -3px;
+  left: 85px;
+  content: "";
+  min-height: 100px;
+  height: 100%;
+  width: 10px;
+  background-color: #fafafa;
+  z-index: 2; }
+
+.aboutMessaging span, .aboutMessaging h4 {
+  color: #41ade0; }
+
+.aboutPhone span, .aboutPhone h4 {
+  color: #f47820; }
+
+.aboutVideo span, .aboutVideo h4 {
+  color: #faa71a; }
+
+.aboutFiles span, .aboutFiles h4 {
+  color: #77a803; }
+
+.icon {
+  font-family: "Pictos Custom";
+  -webkit-font-smoothing: antialiased;
+  color: #21a8d3;
+  font-size: 250px;
+  float: left;
+  margin: 0;
+  line-height: 50%;
+  position: relative;
+  top: 60px; }
+
+[data-icon]:before {
+  font-family: "Pictos Custom";
+  content: attr(data-icon);
+  -webkit-font-smoothing: antialiased;
+  margin-right: 8px;
+  font-size: 150%;
+  line-height: 10%;
+  position: relative;
+  top: 3px;
+  font-weight: normal !important; }
+
+h1[data-icon]:before {
+  font-size: 50px;
+  line-height: 10%;
+  position: relative;
+  top: 6px;
+  margin-right: 10px; }
+
+#upload[data-icon]:before {
+  font-size: 200%;
+  top: 5px;
+  font-family: "Pictos Custom";
+  -webkit-font-smoothing: antialiased; }
+
+#dropZone {
+  width: 400px;
+  height: 200px;
+  margin: 20px auto 20px auto;
+  background: #54dbff;
+  background-image: -webkit-radial-gradient(center center, circle cover, #54dbff, #1097c2);
+  background-image: -moz-radial-gradient(center center, circle cover, #54dbff, #1097c2);
+  background-image: -ms-radial-gradient(center center, circle cover, #54dbff, #1097c2);
+  background-image: -o-radial-gradient(center center, circle cover, #54dbff, #1097c2);
+  background-image: radial-gradient(center center, circle cover, #54dbff, #1097c2);
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid white;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset rgba(0, 0, 0, 0.6) 0 0px 20px;
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.6) 0 0px 20px;
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.6) 0 0px 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -khtml-border-radius: 20px;
+  -o-border-radius: 20px;
+  -border-radius: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 100; }
+
+.dialogContainer p {
+  font-size: 16px !important;
+  position: absolute;
+  top: 130px;
+  width: 400px;
+  text-align: center;
+  z-index: 100;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.5),Direction=135,Strength=0); }
+.dialogContainer strong {
+  font-size: 20px !important;
+  margin: 10px 0;
+  display: block; }
+.dialogContainer em {
+  font-size: 20px;
+  margin: 10px 0;
+  display: block;
+  font-weight: bold; }
+  .dialogContainer em:before {
+    content: "— "; }
+  .dialogContainer em:after {
+    content: " —"; }
+.dialogContainer:hover #dropZone {
+  background: #87ffff;
+  background-image: -webkit-radial-gradient(center center, circle cover, #87ffff, #1097c2);
+  background-image: -moz-radial-gradient(center center, circle cover, #87ffff, #1097c2);
+  background-image: -ms-radial-gradient(center center, circle cover, #87ffff, #1097c2);
+  background-image: -o-radial-gradient(center center, circle cover, #87ffff, #1097c2);
+  background-image: radial-gradient(center center, circle cover, #87ffff, #1097c2);
+  box-shadow: inset rgba(0, 0, 0, 0.6) 0 3px 30px;
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.6) 0 3px 30px;
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.6) 0 3px 30px; }
+.dialogContainer:hover p, .dialogContainer:hover em {
+  color: #333333;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.5),Direction=135,Strength=0); }
+
+#fileInput {
+  position: absolute;
+  z-index: -1000; }
+
+body {
+  font-family: sans-serif; }
+
+.dialerwrapper {
+  width: 280px;
+  height: 350px;
+  background-color: #cccccc; }
+  .dialerwrapper .numberEntry {
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    text-shadow: 1px 1px 0 #555555;
+    font-size: 2em;
+    color: white;
+    outline: 0;
+    border: 0;
+    background: #959595;
+    background: -moz-linear-gradient(top, #959595 50%, #767676 50%, #565656 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #959595), color-stop(50%, #767676), color-stop(100%, #565656));
+    background: -webkit-linear-gradient(top, #959595 50%, #767676 50%, #565656 100%);
+    background: -o-linear-gradient(top, #959595 50%, #767676 50%, #565656 100%);
+    background: -ms-linear-gradient(top, #959595 50%, #767676 50%, #565656 100%);
+    background: linear-gradient(top, #959595 50%, #767676 50%, #565656 100%);
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #777777; }
+    .dialerwrapper .numberEntry:focus {
+      outline: 0; }
+  .dialerwrapper #dialpad {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .dialerwrapper #dialpad li {
+      width: inherit;
+      height: 21.25%;
+      white-space: nowrap;
+      font-size: 0;
+      margin: 0;
+      padding: 0; }
+    .dialerwrapper #dialpad button {
+      display: inline-block;
+      vertical-align: top;
+      width: 33.3%;
+      height: 100%;
+      background: #eeeeee;
+      font-size: 16px;
+      text-align: center;
+      outline: 0;
+      border-top: 1px solid white;
+      border-right: 1px solid white;
+      border-bottom: 1px solid #c7c7c7;
+      border-left: 1px solid #c7c7c7;
+      border-radius: 0;
+      margin: 0;
+      padding: 0;
+      color: #555555;
+      vertical-align: middle; }
+      .dialerwrapper #dialpad button:hover {
+        background-color: #cecece; }
+      .dialerwrapper #dialpad button p {
+        width: 100%;
+        display: inline-table;
+        font-size: 1.2em;
+        font-weight: 700;
+        margin: 0; }
+      .dialerwrapper #dialpad button div {
+        text-transform: uppercase;
+        font-size: 0.6em; }
+  .dialerwrapper #actions nav {
+    position: relative; }
+  .dialerwrapper #actions a {
+    width: 33.3%; }
+
+.close_dialer {
+  background-color: #555555;
+  height: 25px;
+  width: 100%;
+  display: block;
+  position: relative; }
+
+.cancel {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  padding: 3px;
+  line-height: 9px;
+  display: block;
+  color: white;
+  border: 1px solid white;
+  background-color: #666666; }
+  .cancel:hover {
+    color: white;
+    background-color: #bb0000;
+    cursor: pointer; }
+
+#screen {
+  overflow: hidden;
+  padding: 15px 15px 0 15px;
+  z-index: 99; }
+  #screen header {
+    background-color: #555555; }
+  #screen header, #screen footer {
+    height: 40px;
+    width: 100%;
+    padding: 10px 0;
+    display: block; }
+    #screen header nav, #screen footer nav {
+      width: 100%;
+      display: table;
+      margin: 0 auto;
+      border: 1px solid #222222;
+      border-radius: 10px; }
+      #screen header nav a, #screen footer nav a {
+        display: table-cell;
+        width: 50%;
+        color: #eeeeee;
+        font-weight: 900;
+        text-decoration: none;
+        text-align: center;
+        text-shadow: 1px 1px 0 #222222;
+        letter-spacing: 0.3px;
+        padding: 10px 0;
+        border-left: 1px solid #222222;
+        border-right: 1px solid #777777;
+        background: #888888;
+        background: -moz-linear-gradient(top, #888888 0%, #555555 100%) repeat-x, #888888;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #888888) repeat-x, color-stop(100%, #555555)), #888888;
+        background: -webkit-linear-gradient(top, #888888 0%, #555555 100%) repeat-x, #888888;
+        background: -o-linear-gradient(top, #888888 0%, #555555 100%) repeat-x, #888888;
+        background: -ms-linear-gradient(top, #888888 0%, #555555 100%) repeat-x, #888888;
+        background: linear-gradient(top, #888888 0%, #555555 100%) repeat-x, #888888;
+        -moz-transition: background 1s linear;
+        -webkit-transition: all 0.3s linear 0;
+        -moz-transition-property: all;
+        -moz-transition-duration: 1s;
+        -moz-transition-timing-function: linear;
+        -moz-transition-delay: linear; }
+        #screen header nav a:first-child, #screen footer nav a:first-child {
+          border-left: 0;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px; }
+        #screen header nav a:last-child, #screen footer nav a:last-child {
+          margin: 0;
+          border-right: 0;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px; }
+        #screen header nav a:hover, #screen footer nav a:hover {
+          background-position: 0 15px;
+          cursor: pointer; }
+
+#login #screen {
+  padding: 0;
+  margin: 0 10px 10px 10px;
+  position: relative; }
+  #login #screen:after {
+    content: "";
+    width: 280px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    left: 1px;
+    bottom: 0px;
+    background: #cccccc;
+    z-index: 200000000; }
+#login footer {
+  display: none; }
+#login .dialerwrapper {
+  background-color: white;
+  border-right: 1px solid #cccccc; }
+#login .numberEntry {
+  border-left: 0px solid #dddddd;
+  margin-left: 1px;
+  margin-right: 2px;
+  padding-top: 3px;
+  border-top: 1px solid #dddddd;
+  background-image: #eeeeee;
+  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(1, #dddddd));
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+  color: #555555;
+  text-shadow: white 0 1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=white,Direction=135,Strength=0); }
+
+#messages {
+  background-color: #eeeeee;
+  min-height: 100%; }
+  #messages .mainContent {
+    padding: 0px; }
+  #messages header {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 2px 1px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 2px 1px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 1px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+
+.newMessage {
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  color: #555555; }
+  .newMessage:before {
+    top: 1px; }
+  .newMessage.new {
+    color: #41ade0; }
+
+.dragOverlay {
+  position: fixed;
+  left: 300px;
+  top: 80px;
+  right: 0;
+  bottom: 0px;
+  z-index: 100;
+  color: #cccccc;
+  opacity: 0.7;
+  background-image: url(/img/bg-linen-dk.png);
+  line-height: 800px;
+  height: 0px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 40px;
+  box-shadow: inset black 0 0 5px;
+  -moz-box-shadow: inset black 0 0 5px;
+  -webkit-box-shadow: inset black 0 0 5px; }
+  .dragOverlay.active {
+    height: 100%; }
+  .dragOverlay.over {
+    box-shadow: inset rgba(0, 0, 0, 0.9) 0 0 10px;
+    -moz-box-shadow: inset rgba(0, 0, 0, 0.9) 0 0 10px;
+    -webkit-box-shadow: inset rgba(0, 0, 0, 0.9) 0 0 10px;
+    color: white; }
+
+.discussion {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -o-border-radius: 3px;
+  -border-radius: 3px;
+  border-radius: 3px; }
+  .discussion:first-child {
+    margin-top: 0; }
+  .discussion li {
+    display: block;
+    position: relative;
+    margin-bottom: 1px;
+    padding: 10px 10px 10px 9px;
+    border-left: 1px solid #fafafa;
+    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid white; }
+    .discussion li:last-child {
+      margin-bottom: 52px;
+      position: relative; }
+    .discussion li:last-child:after {
+      content: "";
+      width: 100%;
+      height: 0px;
+      background-color: white;
+      border-top: 2px solid #fafafa;
+      position: absolute;
+      bottom: -3px;
+      left: 0; }
+    .discussion li.me p {
+      background-image: #f0fbff;
+      background-image: -moz-linear-gradient(top, #f0fbff, #d2f2ff);
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f0fbff), color-stop(1, #d2f2ff));
+      -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom'); }
+      .discussion li.me p:before {
+        color: #dff5fe; }
+    .discussion li.sms p {
+      background-image: #fbfff3;
+      background-image: -moz-linear-gradient(top, #fbfff3, #f7ffe4);
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fbfff3), color-stop(1, #f7ffe4));
+      -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom'); }
+      .discussion li.sms p:before {
+        content: "k";
+        font-weight: bold;
+        color: black;
+        display: inline-block;
+        font-family: "Pictos Custom";
+        -webkit-font-smoothing: antialiased;
+        margin-right: 8px;
+        font-size: 20px;
+        line-height: 10%;
+        position: relative;
+        top: -2px;
+        font-weight: normal !important;
+        z-index: 1000;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        text-shadow: transparent 0 0 0px;
+        -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=transparent,Direction=135,Strength=0);
+        left: 0; }
+      .discussion li.sms p:after {
+        content: "▶";
+        font-size: 10px;
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+        position: absolute;
+        left: -8px;
+        top: 11px;
+        z-index: 0;
+        color: #fafafa;
+        text-shadow: #aaaaaa 1px -1px 0px;
+        -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=#aaaaaa,Direction=135,Strength=0);
+        color: #f8feea; }
+  .discussion p {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    -o-border-radius: 10px;
+    -border-radius: 10px;
+    border-radius: 10px;
+    background-image: #fefefe;
+    background-image: -moz-linear-gradient(top, #fefefe, #eeeeee);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fefefe), color-stop(1, #eeeeee));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-bottom: 1px solid #aaaaaa;
+    margin: 2px 100px 0px 60px;
+    padding: 10px 10px 10px 10px;
+    min-width: 30px; }
+    .discussion p:before {
+      content: "▶";
+      font-size: 10px;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+      position: absolute;
+      left: -8px;
+      top: 11px;
+      z-index: 0;
+      color: #fafafa;
+      text-shadow: #aaaaaa 1px -1px 0px;
+      -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=#aaaaaa,Direction=135,Strength=0); }
+    .discussion p a {
+      text-shadow: transparent 0 0 0px;
+      -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=transparent,Direction=135,Strength=0); }
+  .discussion .userImage {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    outline: 0px none;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -o-border-radius: 3px;
+    -border-radius: 3px;
+    border-radius: 3px;
+    background-color: white;
+    border-bottom: 1px solid #aaaaaa; }
+  .discussion .time {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    font-size: 11px;
+    color: #555555;
+    -webkit-transition: 0.2s opacity;
+    -moz-transition: 0.2s opacity;
+    font-weight: 300; }
+  .discussion .userName {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    font-size: 11px;
+    margin-left: 47px;
+    color: #555555;
+    font-weight: 400;
+    border-bottom: 1px solid #999999; }
+
+.chatField {
+  position: fixed;
+  padding: 10px;
+  bottom: 0;
+  left: 300px;
+  width: 100%;
+  background-image: #eeeeee;
+  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(1, #dddddd));
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+  display: block;
+  border-top: 1px solid white; }
+
+.chatInput {
+  min-width: 250px;
+  padding: 5px;
+  margin: 0 10px 0 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -o-border-radius: 3px;
+  -border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.chatInput {
+  display: inline-block; }
+
+.chatSend {
+  display: none; }
+
+.chatField.online .chatSend {
+  display: inline-block; }
+
+aside {
+  width: 300px;
+  top: 40px;
+  bottom: 0px;
+  position: fixed;
+  background: #c3cbce url(/img/bg-linen-lt.png);
+  margin: 40px 0 0 0;
+  overflow-y: scroll;
+  box-shadow: inset rgba(0, 0, 0, 0.5) 0 3px 5px;
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.5) 0 3px 5px;
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.5) 0 3px 5px; }
+  aside ul, aside li {
+    list-style: none;
+    margin: 0;
+    z-index: -10; }
+  aside ul {
+    padding: 0; }
+  aside li {
+    font-weight: 300;
+    padding: 5px 10px 5px 10px;
+    font-size: 15px;
+    border-top: 2px groove rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+    aside li:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+    aside li.contact.selected {
+      background-color: rgba(0, 0, 0, 0.3);
+      box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 8px;
+      -moz-box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 8px;
+      -webkit-box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 8px;
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.8); }
+      aside li.contact.selected h3 {
+        color: white;
+        text-shadow: black 0 -1px 0px;
+        -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=black,Direction=135,Strength=0); }
+    aside li.conversation.selected {
+      background-color: rgba(255, 255, 255, 0.8); }
+
+#contact header nav {
+  margin-top: 0px;
+  position: fixed;
+  right: 5px; }
+
+.contactImage {
+  width: 100px;
+  height: 100px;
+  background-color: #fafafa;
+  border: 10px solid white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.1),Direction=135,Strength=8);
+  float: left;
+  margin: 0px 20px 20px 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.talkyTalkerton {
+  text-align: right;
+  position: fixed;
+  right: 20px; }
+
+.startActions {
+  position: absolute;
+  right: 3px;
+  top: 6px;
+  z-index: 1000; }
+
+.mainContent .startActions {
+  z-index: 10;
+  left: 20px;
+  top: 3px;
+  max-width: 50%; }
+  .mainContent .startActions button {
+    min-width: 120px;
+    width: auto; }
+  .mainContent .startActions button {
+    display: inline-block; }
+
+#contact h1, #contact h3, #contact h4 {
+  color: #555555; }
+#contact h1 {
+  padding-top: 10px;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 0px; }
+#contact h3, #contact h4 {
+  line-height: 160%;
+  font-size: 18px;
+  font-weight: 400; }
+#contact .startPhoneCall {
+  display: block; }
+
+#contact h2 {
+  color: #555555;
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px; }
+  #contact h2 a {
+    color: #555555;
+    text-decoration: underline;
+    position: relative;
+    left: 10px; }
+  #contact h2:before {
+    position: absolute;
+    left: -50px;
+    top: 28px;
+    color: #777777;
+    text-shadow: rgba(255, 255, 255, 0.5) 0 -1px 3px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.5),Direction=135,Strength=3); }
+
+.contactDetails {
+  margin-left: 120px;
+  position: relative;
+  min-height: 1px;
+  clear: both; }
+  .contactDetails:empty {
+    display: none; }
+  .contactDetails:after {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    content: "";
+    height: 100%;
+    width: 10px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) -5px 0 10px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) -5px 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) -5px 0 10px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.1),Direction=135,Strength=10);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 5px 0;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    -o-border-radius: 10px;
+    -border-radius: 10px;
+    border-radius: 10px;
+    z-index: 1; }
+  .contactDetails:before {
+    position: absolute;
+    top: -5px;
+    left: 0px;
+    content: "";
+    height: 130%;
+    width: 10px;
+    background-color: #fafafa;
+    z-index: 2; }
+
+h2 .startPhoneCall {
+  min-width: auto;
+  width: auto;
+  position: relative;
+  top: -2px;
+  margin: 0 0 0 20px; }
+
+.conversationList li, .contactList li {
+  position: relative;
+  z-index: 1;
+  padding: 15px 35px 15px 30px;
+  border-top: 0px none;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.3); }
+.conversationList h2, .contactList h2 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.8),Direction=135,Strength=0); }
+.conversationList h3, .contactList h3 {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.7),Direction=135,Strength=0); }
+
+.conversationList li {
+  background-color: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.3),Direction=135,Strength=2);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  top: -1px; }
+  .conversationList li h2 {
+    color: #555555;
+    text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.8),Direction=135,Strength=0); }
+
+.messenger:after {
+  content: ", "; }
+.messenger:last-child:after {
+  content: ""; }
+
+button.close, .newMessage {
+  position: absolute;
+  display: inline-block; }
+
+.newMessage {
+  line-height: 1;
+  -moz-border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -khtml-border-radius: 60px;
+  -o-border-radius: 60px;
+  -border-radius: 60px;
+  border-radius: 60px;
+  padding: 1px 5px 3px 5px;
+  font-size: 14px;
+  text-align: center;
+  top: 50%;
+  margin-top: -7px; }
+
+button.close {
+  min-width: 20px;
+  background-image: transparent;
+  background-image: -moz-linear-gradient(top, transparent, transparent);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, transparent));
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+  border: 0px none;
+  padding: 0;
+  right: 0px;
+  top: 50%;
+  margin-top: -3px;
+  z-index: 20000;
+  cursor: pointer; }
+  button.close:before {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 100;
+    color: rgba(0, 0, 0, 0.25);
+    text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.7),Direction=135,Strength=0); }
+  button.close:hover:before {
+    color: rgba(200, 0, 0, 0.7);
+    text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=0);
+    z-index: 1; }
+  button.close:hover:after {
+    content: "";
+    display: block;
+    background-color: white;
+    z-index: -1;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    -khtml-border-radius: 60px;
+    -o-border-radius: 60px;
+    -border-radius: 60px;
+    border-radius: 60px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 1px;
+    top: -7px; }
+
+.selected button.close {
+  color: rgba(0, 0, 0, 0.4);
+  text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.7),Direction=135,Strength=0); }
+  .selected button.close:before {
+    color: #cccccc;
+    text-shadow: rgba(0, 0, 0, 0.5) 0 -1px 0px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=0); }
+  .selected button.close:hover {
+    margin-top: -4px; }
+    .selected button.close:hover:before {
+      color: rgba(200, 0, 0, 0.7);
+      text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0px;
+      -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=0);
+      z-index: 1; }
+    .selected button.close:hover:after {
+      content: "";
+      display: block;
+      background-color: white;
+      z-index: -1;
+      -moz-border-radius: 60px;
+      -webkit-border-radius: 60px;
+      -khtml-border-radius: 60px;
+      -o-border-radius: 60px;
+      -border-radius: 60px;
+      border-radius: 60px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 1px;
+      top: -7px; }
+
+.startVideoCall, .startChat, .startPhoneCall {
+  display: none; }
+
+.onlineStatus {
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  margin-top: -4px;
+  vertical-align: middle;
+  height: 6px;
+  width: 2px;
+  padding: 1px 5px 4px 5px;
+  -moz-border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -khtml-border-radius: 60px;
+  -o-border-radius: 60px;
+  -border-radius: 60px;
+  border-radius: 60px;
+  background-color: #555555;
+  border-bottom: 1px solid transparent; }
+
+.online .onlineStatus {
+  background-color: #77a803;
+  border-bottom: 1px solid #333333; }
+.online .startPhoneCall {
+  display: none !important; }
+.online .startVideoCall, .online .startChat {
+  display: inline-block; }
+
+.selected .onlineStatus {
+  background-color: #cccccc; }
+
+.selected.online .onlineStatus {
+  background-color: #77a803;
+  border-bottom: 1px solid #333333; }
+
+.canVideo {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  color: rgba(0, 0, 0, 0.3); }
+  .canVideo.indeed {
+    display: inline-block; }
+
+.hasPhone .startPhoneCall, .hasPhone .startChat {
+  display: inline-block; }
+
+a.backToFiles:link, a.backToFiles:visited {
+  color: #555555;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px !important;
+  position: absolute;
+  top: 5px; }
+
+a.backToFiles:hover {
+  color: #1097c2; }
+
+#file {
+  font-size: 13px; }
+
+#files li, #files a {
+  text-align: left; }
+
+ul.files {
+  padding: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -o-border-radius: 5px;
+  -border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  z-index: -1;
+  margin: 0; }
+  ul.files li {
+    text-indent: 0;
+    font-size: 16px;
+    list-style: none;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    height: 35px;
+    -webkit-transition: height 0.2s linear; }
+    ul.files li:nth-child(odd) {
+      background-color: #fafafa;
+      border-bottom: 1px solid #efefef; }
+    ul.files li:nth-child(even) {
+      background-color: #fdfdfd;
+      border-bottom: 1px solid #efefef; }
+    ul.files li:first-child {
+      -webkit-border-top-left-radius: 5px;
+      -webkit-border-top-right-radius: 5px;
+      -webkit-border-bottom-left-radius: 0;
+      -webkit-border-bottom-right-radius: 0;
+      -moz-border-radius-topleft: 5px;
+      -moz-border-radius-topright: 5px;
+      -moz-border-radius-bottomleft: 0;
+      -moz-border-radius-bottomright: 0;
+      -border-top-left-radius: 5px;
+      -border-top-right-radius: 5px;
+      -border-bottom-left-radius: 0;
+      -border-bottom-right-radius: 0;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0; }
+    ul.files li:last-child {
+      border-bottom: 0px none;
+      -webkit-border-top-left-radius: 0;
+      -webkit-border-top-right-radius: 0;
+      -webkit-border-bottom-left-radius: 5px;
+      -webkit-border-bottom-right-radius: 5px;
+      -moz-border-radius-topleft: 0;
+      -moz-border-radius-topright: 0;
+      -moz-border-radius-bottomleft: 5px;
+      -moz-border-radius-bottomright: 5px;
+      -border-top-left-radius: 0;
+      -border-top-right-radius: 0;
+      -border-bottom-left-radius: 5px;
+      -border-bottom-right-radius: 5px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px; }
+    ul.files li:hover a.delete {
+      color: #dd0000; }
+    ul.files li a {
+      padding: 7px 230px 7px 10px;
+      display: block; }
+    ul.files li.delete {
+      height: 0px;
+      overflow: hidden; }
+    ul.files li a:link, ul.files li a:active, ul.files li a:visited {
+      color: #555555;
+      text-decoration: none; }
+    ul.files li a:hover {
+      color: #1097c2;
+      text-decoration: underline; }
+    ul.files li a:link, ul.files li a:visited {
+      text-decoration: none; }
+    ul.files li:hover .doStuff button {
+      opacity: 0.5; }
+
+button {
+  background-image: #efefef;
+  background-image: -moz-linear-gradient(top, #efefef, #bbbbbb);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #efefef), color-stop(1, #bbbbbb));
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+  background-color: transparent;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid white;
+  border-bottom: 1px solid #aaaaaa;
+  font-size: 12px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -o-border-radius: 5px;
+  -border-radius: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+  padding: 7px 10px;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  text-shadow: white 0 1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=white,Direction=135,Strength=0);
+  min-width: 60px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+#try {
+  display: block;
+  text-align: center; }
+
+#loginButton {
+  margin: 15px 0;
+  width: 80px; }
+
+#addFile, #startDiscussion {
+  position: fixed;
+  top: 45px;
+  z-index: 100; }
+
+#addFile {
+  background-image: #43caf5;
+  background-image: -moz-linear-gradient(top, #43caf5, #0086b1);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #43caf5), color-stop(1, #0086b1));
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+  text-shadow: #00648f 0 -1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=#00648f,Direction=135,Strength=0);
+  border-top: 1px solid #65ecff;
+  border-bottom: 1px solid #00648f;
+  color: white; }
+
+#addFile {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 3px 7px 5px 7px;
+  line-height: 20px; }
+  #addFile:before {
+    font-size: 30px;
+    font-weight: bold;
+    top: 6px;
+    position: relative; }
+
+#addContact, #startDiscussion, #showDialer {
+  padding: 1px 0px 4px 0px;
+  font-size: 20px;
+  line-height: 21px;
+  font-weight: bold;
+  min-width: 34px; }
+
+#addContact {
+  position: absolute;
+  width: 41px;
+  top: 5px;
+  z-index: 100; }
+
+#showDialer {
+  width: 41px;
+  font-size: 16px;
+  padding: 3px 0px 2px 10px;
+  position: absolute;
+  top: 5px;
+  left: 202px; }
+
+.plusContact {
+  font-size: 14px;
+  line-height: 0;
+  width: 0; }
+  .plusContact:before {
+    position: relative;
+    margin-right: 0;
+    top: 3px; }
+
+#addFile {
+  right: 10px; }
+
+#addContact, #startDiscussion {
+  left: 252px; }
+
+a.delete {
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  text-decoration: none;
+  color: #bbbbbb;
+  display: none; }
+
+.formActions {
+  margin-left: 140px; }
+
+.doStuff {
+  position: absolute;
+  right: -5px;
+  top: 4px; }
+  .doStuff button {
+    padding: 5px !important;
+    opacity: 0.4;
+    -webkit-transition: 0.2s opacity;
+    z-index: 1; }
+    .doStuff button:hover {
+      opacity: 1 !important; }
+
+.deleteFile, .deleteContact, .cancel, .editContact {
+  background-image: transparent;
+  background-image: -moz-linear-gradient(top, transparent, transparent);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, transparent));
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+  border: 0px none; }
+  .deleteFile:hover, .deleteContact:hover, .cancel:hover, .editContact:hover {
+    color: #bb0000; }
+
+.editTools {
+  position: fixed;
+  top: 7px;
+  right: -10px;
+  z-index: 100;
+  width: 200px;
+  display: block;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .editTools button {
+    height: 35px;
+    width: 80px;
+    padding: 10px 0; }
+    .editTools button.deleteContact:hover {
+      background-image: red;
+      background-image: -moz-linear-gradient(top, red, #c80000);
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, red), color-stop(1, #c80000));
+      -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+      text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0px;
+      -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.5),Direction=135,Strength=0);
+      border-top: 1px solid #ffc800; }
+    .editTools button.editContact:hover {
+      color: #41ade0 !important; }
+
+.startPhoneCall, .contact .startVideoCall, .contact .startChat {
+  z-index: 999999;
+  background: #9a9a9a url(/img/semi-transparent-linen.png);
+  width: 18px;
+  padding: 5px 11px 5px 11px;
+  margin: 2px 5px 0 0;
+  position: relative;
+  overflow: hidden;
+  min-width: 40px;
+  font-size: 16px;
+  border: none;
+  text-shadow: rgba(255, 255, 255, 0.6) 0 1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.6),Direction=135,Strength=0);
+  color: #555555;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -o-border-radius: 5px;
+  -border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.3),Direction=135,Strength=2); }
+  .startPhoneCall:after, .contact .startVideoCall:after, .contact .startChat:after {
+    content: "";
+    position: absolute;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid #454545;
+    top: 1px;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -o-border-radius: 5px;
+    -border-radius: 5px;
+    border-radius: 5px;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.12) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(75%, rgba(255, 255, 255, 0.12)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.12) 75%, rgba(255, 255, 255, 0) 100%); }
+  .startPhoneCall:before, .contact .startVideoCall:before, .contact .startChat:before {
+    z-index: 1000; }
+  .startPhoneCall:active, .contact .startVideoCall:active, .contact .startChat:active {
+    top: 1px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 2px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 2px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 2px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.3),Direction=135,Strength=2); }
+    .startPhoneCall:active:hover:after, .contact .startVideoCall:active:hover:after, .contact .startChat:active:hover:after {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid #454545; }
+  .startPhoneCall:hover, .contact .startVideoCall:hover, .contact .startChat:hover {
+    background: #6fa900 url(/img/semi-transparent-linen.png);
+    text-shadow: rgba(0, 0, 0, 0.6) 0 -1px 0px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.6),Direction=135,Strength=0);
+    color: white; }
+    .startPhoneCall:hover:after, .contact .startVideoCall:hover:after, .contact .startChat:hover:after {
+      border-top: 1px solid rgba(255, 255, 220, 0.8);
+      border-bottom: 1px solid #225300;
+      background: -moz-linear-gradient(top, rgba(168, 255, 0, 0.5) 0%, rgba(168, 255, 0, 0.12) 75%, rgba(168, 255, 0, 0) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(168, 255, 0, 0.5)), color-stop(75%, rgba(255, 255, 0, 0.12)), color-stop(100%, rgba(255, 255, 255, 0)));
+      background: -webkit-linear-gradient(top, rgba(168, 255, 0, 0.5) 0%, rgba(168, 255, 0, 0.12) 75%, rgba(168, 255, 0, 0) 100%); }
+
+.startChat {
+  padding: 6px 10px 4px 10px; }
+
+.videoInvite, .startNewGroupChat {
+  background: #9a9a9a url(/img/semi-transparent-linen.png);
+  padding: 7px 10px 7px 10px !important; }
+  .videoInvite:active, .startNewGroupChat:active {
+    top: 3px; }
+
+.videoInvite {
+  position: absolute;
+  right: 60px;
+  top: 5px;
+  width: 100px; }
+
+.startNewGroupChat {
+  width: auto;
+  position: absolute;
+  left: 10px;
+  top: 3px; }
+
+header .startActions {
+  left: 10px !important; }
+
+.videoInvite, #navButton, .startNewGroupChat {
+  z-index: 200000;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -o-border-radius: 4px;
+  -border-radius: 4px;
+  border-radius: 4px;
+  background-image: #4a4a4a;
+  background-image: -moz-linear-gradient(top, #4a4a4a, #333333);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #4a4a4a), color-stop(1, #333333));
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+  color: white;
+  text-shadow: black 0 -1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=black,Direction=135,Strength=0);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 4px 5px 4px;
+  margin-top: 1px;
+  border-top: 1px solid #696969;
+  border-bottom: 1px solid #090909; }
+  .videoInvite:active, #navButton:active, .startNewGroupChat:active {
+    border-bottom: 1px solid #41ade0;
+    border-top: 1px solid #41ade0;
+    box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 7px;
+    -moz-box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 7px;
+    -webkit-box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 7px;
+    background-image: #63cfff;
+    background-image: -moz-linear-gradient(top, #63cfff, #1f8bbe);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #63cfff), color-stop(1, #1f8bbe));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    margin-top: 2px; }
+
+.videoInvite:hover, #navButton:hover, #navActions.active #navButton {
+  border-top: 1px solid #96ffff;
+  border-bottom: 1px solid #00588b;
+  background-image: #63cfff;
+  background-image: -moz-linear-gradient(top, #63cfff, #1f8bbe);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #63cfff), color-stop(1, #1f8bbe));
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+  text-shadow: #00588b 0 -1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=#00588b,Direction=135,Strength=0); }
+
+#navActions {
+  position: fixed;
+  right: 10px;
+  top: 5px;
+  z-index: 10000;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+#navButton {
+  height: 24px;
+  padding: 0 25px 0 25px; }
+  #navButton img {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 4px;
+    left: 3px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    -o-border-radius: 2px;
+    -border-radius: 2px;
+    border-radius: 2px; }
+  #navButton .arrow {
+    position: absolute;
+    background: url(/img/arrow.png) no-repeat 0 0;
+    width: 8px;
+    height: 6px;
+    top: 11px;
+    right: 9px;
+    z-index: 100000; }
+
+#navMenu {
+  display: none;
+  position: absolute;
+  top: 27px;
+  right: 0px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -o-border-radius: 3px;
+  -border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.3),Direction=135,Strength=2);
+  z-index: 100;
+  background: #efefef;
+  width: auto; }
+  #navMenu a {
+    font-size: 13px;
+    color: #555555;
+    display: block;
+    min-width: 120px;
+    padding: 7px;
+    border-bottom: 2px groove white;
+    text-shadow: white 0 1px 0px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=white,Direction=135,Strength=0); }
+    #navMenu a:hover {
+      background-color: white;
+      color: #41ade0; }
+      #navMenu a:hover:first-child {
+        -webkit-border-top-left-radius: 3px;
+        -webkit-border-top-right-radius: 3px;
+        -webkit-border-bottom-left-radius: 0;
+        -webkit-border-bottom-right-radius: 0;
+        -moz-border-radius-topleft: 3px;
+        -moz-border-radius-topright: 3px;
+        -moz-border-radius-bottomleft: 0;
+        -moz-border-radius-bottomright: 0;
+        -border-top-left-radius: 3px;
+        -border-top-right-radius: 3px;
+        -border-bottom-left-radius: 0;
+        -border-bottom-right-radius: 0;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; }
+      #navMenu a:hover:last-child {
+        -webkit-border-top-left-radius: 0;
+        -webkit-border-top-right-radius: 0;
+        -webkit-border-bottom-left-radius: 3px;
+        -webkit-border-bottom-right-radius: 3px;
+        -moz-border-radius-topleft: 0;
+        -moz-border-radius-topright: 0;
+        -moz-border-radius-bottomleft: 3px;
+        -moz-border-radius-bottomright: 3px;
+        -border-top-left-radius: 0;
+        -border-top-right-radius: 0;
+        -border-bottom-left-radius: 3px;
+        -border-bottom-right-radius: 3px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px; }
+    #navMenu a:last-child {
+      border-bottom: 0px none; }
+
+#navActions.active #navMenu {
+  display: block; }
+
+.addUsers {
+  position: absolute;
+  right: 0px;
+  top: 5px; }
+
+input:-webkit-input-placeholder {
+  font-weight: 100;
+  color: #aaaaaa; }
+
+input:-moz-placeholder {
+  color: #aaaaaa;
+  font-weight: 100; }
+
+input:placeholder {
+  font-weight: 100;
+  color: #aaaaaa; }
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding: 5px;
+  color: #555555;
+  font-size: 14px; }
+
+.search {
+  margin-top: 2px;
+  padding: 6px 10px 4px 10px;
+  max-width: 163px;
+  -moz-border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -khtml-border-radius: 60px;
+  -o-border-radius: 60px;
+  -border-radius: 60px;
+  border-radius: 60px;
+  border: 0px none;
+  outline: 0px;
+  box-shadow: inset rgba(0, 0, 0, 0.5) 0 1px 3px;
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.5) 0 1px 3px;
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.5) 0 1px 3px;
+  -webkit-transition: 0.2s max-width;
+  -moz-transition: 0.2s max-width; }
+
+section .search {
+  margin-left: 10px;
+  max-width: 200px; }
+
+.mainContent .startCall {
+  display: none; }
+
+#addUserDialog .contacts {
+  overflow-y: scroll;
+  height: 200px;
+  border: 1px solid #cccccc;
+  margin: 10px 0;
+  padding: 10px; }
+#addUserDialog .contactItem {
+  color: #777777;
+  cursor: pointer;
+  display: block;
+  border-bottom: 1px solid #eeeeee;
+  padding: 3px 0; }
+  #addUserDialog .contactItem:before {
+    content: "- ";
+    color: #cccccc; }
+#addUserDialog .contactItem.selected {
+  font-weight: bold;
+  color: #41ade0; }
+  #addUserDialog .contactItem.selected:before {
+    content: "√ ";
+    color: #41ade0;
+    font-weight: bold; }
+
+body {
+  background-color: #fafafa;
+  font-family: "Helvetica Neue", "HelveticaNeue", "Helvetica-Neue", "HelveticaNeue-Light", Arial, sans-serif;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+* {
+  -webkit-tap-highlight-color: transparent; }
+
+.wrap {
+  background-color: #fafafa;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 0; }
+
+#pages {
+  height: 100%; }
+
+.page {
+  overflow: hidden;
+  margin-top: 80px;
+  margin-left: 0px;
+  background-color: #fafafa;
+  padding: 0;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.toggleView {
+  position: fixed;
+  top: 0; }
+
+.toggleView, .toggleWrap {
+  display: none; }
+
+.wrap > header {
+  padding: 10px;
+  height: 40px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  background-image: url(/img/bg-linen-dk.png);
+  border-bottom: 1px solid white;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 100; }
+  .wrap > header:before {
+    content: "";
+    width: 100%;
+    height: 40px;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0; }
+
+.mainContent {
+  margin-left: 300px;
+  padding: 20px 20px 100px 20px; }
+  .mainContent header {
+    background-image: #f3f3f3;
+    background-image: -moz-linear-gradient(top, #f3f3f3, #f0f0f0);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f3f3f3), color-stop(1, #f0f0f0));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    right: 0;
+    left: 300px;
+    border-bottom: 1px solid #c4c6c8; }
+
+.topic {
+  border: 1px solid #aaaaaa;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -o-border-radius: 3px;
+  -border-radius: 3px;
+  border-radius: 3px;
+  width: 120px;
+  background: rgba(255, 255, 255, 0.5); }
+
+.members .online, .ui-draggable-dragging {
+  font-weight: bold;
+  background-image: #f0fbff;
+  background-image: -moz-linear-gradient(top, #f0fbff, #d2f2ff);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f0fbff), color-stop(1, #d2f2ff));
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+  border-bottom: 1px solid #9fbfcc;
+  border-top: 1px solid white;
+  padding: 3px 7px;
+  line-height: 1;
+  font-size: 12px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -khtml-border-radius: 30px;
+  -o-border-radius: 30px;
+  -border-radius: 30px;
+  border-radius: 30px; }
+
+.ui-draggable-dragging {
+  line-height: 0.5;
+  cursor: move; }
+
+.members {
+  position: absolute;
+  font-size: 12px;
+  left: 150px;
+  top: 8px; }
+  .members .online, .members .offline {
+    display: inline-block;
+    margin-right: 5px; }
+  .members .offline {
+    font-style: italic;
+    color: #333333;
+    background-image: #eeeeee;
+    background-image: -moz-linear-gradient(top, #eeeeee, #e5e5e5);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(1, #e5e5e5));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-bottom: 1px solid #bbbbbb;
+    border-top: 1px solid white;
+    padding: 3px 7px;
+    line-height: 1;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -khtml-border-radius: 30px;
+    -o-border-radius: 30px;
+    -border-radius: 30px;
+    border-radius: 30px; }
+
+aside {
+  margin: 0;
+  padding-top: 40px; }
+
+aside header, section header {
+  height: 30px;
+  padding: 5px 10px 5px 10px;
+  position: fixed;
+  top: 40px;
+  z-index: 1; }
+
+aside header {
+  background: #dbdada;
+  width: 280px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0) -3px 1px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0) -3px 1px 0px;
+  box-shadow: rgba(0, 0, 0, 0) -3px 1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0),Direction=135,Strength=0);
+  z-index: 100;
+  top: 40px;
+  border-bottom: 1px solid #999999; }
+
+.loginDoor {
+  background-image: url(/img/bg-linen-dk.png);
+  width: 51%;
+  height: 100%;
+  position: absolute;
+  z-index: 1000;
+  -webkit-transition: -webkit-transform 0.7s;
+  -moz-transition: -webkit-transform 0.7s;
+  -o-transition: -webkit-transform 0.7s;
+  transition: transform -webkit-transform 0.7s;
+  -webkit-transform: translateX(0px); }
+  .loginDoor.left {
+    left: 0; }
+    .loginDoor.left.open {
+      -webkit-transform: translateX(-1500px); }
+  .loginDoor.right {
+    right: 0; }
+    .loginDoor.right.open {
+      -webkit-transform: translateX(1500px); }
+
+#callStatus {
+  position: fixed;
+  top: -90px;
+  -webkit-transition: background-color 0.5s; }
+
+.callAccept, .callIgnore, .callEnd, .callPush, .callTake, .callAddParty, .callMute, .callHold, .callCancel {
+  display: none; }
+
+.wrap, .wrap > header, aside, aside header, .page, .mainContent header, nav.selectView, #navActions {
+  -webkit-transition: top 0.5s; }
+
+.call .wrap {
+  top: 80px; }
+.call nav.selectView {
+  top: 105px; }
+.call #navActions {
+  top: 108px; }
+.call .wrap > header {
+  top: 100px; }
+.call .mainContent header {
+  top: 140px; }
+.call aside {
+  top: 140px; }
+  .call aside header {
+    top: 140px; }
+.call .page {
+  margin-top: 100px; }
+.call #callStatus {
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 80px;
+  padding: 10px;
+  z-index: 1000; }
+  .call #callStatus.incoming {
+    background-color: #41ade0;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #63cfff;
+    border-bottom: 2px solid #00699c;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.incoming .callAccept, .call #callStatus.incoming .callIgnore {
+      display: inline-block; }
+    .call #callStatus.incoming .callTime {
+      display: none; }
+  .call #callStatus.waiting {
+    background-color: #f47820;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #ff9a42;
+    border-bottom: 2px solid #b03400;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.waiting .callAccept, .call #callStatus.waiting .callIgnore, .call #callStatus.waiting .callEnd, .call #callStatus.waiting .callPush, .call #callStatus.waiting .callTake, .call #callStatus.waiting .callAddParty, .call #callStatus.waiting .callMute, .call #callStatus.waiting .callHold, .call #callStatus.waiting .callCancel, .call #callStatus.waiting .callTime, .call #callStatus.waiting .callerAvatar, .call #callStatus.waiting .callerName {
+      display: none; }
+    .call #callStatus.waiting .spinner div {
+      background-color: white; }
+  .call #callStatus.calling {
+    background-color: #41ade0;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #63cfff;
+    border-bottom: 2px solid #00699c;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.calling .callCancel {
+      display: inline-block; }
+    .call #callStatus.calling .callTime {
+      display: none; }
+    .call #callStatus.calling .callerName:before {
+      content: "Calling "; }
+  .call #callStatus.local {
+    background-color: #77a803;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #99ca25;
+    border-bottom: 2px solid #336400;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.local .callEnd, .call #callStatus.local .callPush {
+      display: inline-block; }
+  .call #callStatus.remote {
+    background-color: #74e0ff;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #96ffff;
+    border-bottom: 2px solid #309cbb;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.remote .callTake {
+      display: inline-block; }
+    .call #callStatus.remote .callTime {
+      display: none; }
+  .call #callStatus.ending {
+    background-color: #bbbbbb;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #dddddd;
+    border-bottom: 2px solid #777777;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.ending .callAccept, .call #callStatus.ending .callIgnore, .call #callStatus.ending .callEnd, .call #callStatus.ending .callPush, .call #callStatus.ending .callTake, .call #callStatus.ending .callAddParty, .call #callStatus.ending .callMute, .call #callStatus.ending .callHold {
+      display: none; }
+  .call #callStatus.pause {
+    background-color: #f4252f;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #ff4751;
+    border-bottom: 2px solid #b00000;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.pause .callAccept, .call #callStatus.pause .callIgnore, .call #callStatus.pause .callEnd, .call #callStatus.pause .callPush, .call #callStatus.pause .callTake, .call #callStatus.pause .callAddParty, .call #callStatus.pause .callMute, .call #callStatus.pause .callHold {
+      display: none; }
+  .call #callStatus .callActions {
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    display: block;
+    width: 100%; }
+  .call #callStatus nav {
+    float: left; }
+  .call #callStatus button {
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(0, 0, 0, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.7),Direction=135,Strength=0);
+    float: left; }
+    .call #callStatus button:active {
+      box-shadow: inset rgba(0, 0, 0, 0.2) 0 1px 3px;
+      -moz-box-shadow: inset rgba(0, 0, 0, 0.2) 0 1px 3px;
+      -webkit-box-shadow: inset rgba(0, 0, 0, 0.2) 0 1px 3px;
+      padding-top: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      border-top: 1px solid rgba(0, 0, 0, 0.2); }
+
+.callerAvatar {
+  float: left;
+  width: 65px;
+  height: 65px;
+  border: 5px solid #eeeeee;
+  margin-right: 10px; }
+
+.callerName, .callTime {
+  font-weight: bold;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.7) 0 1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.7),Direction=135,Strength=0);
+  line-height: 1; }
+
+.callerName {
+  margin-top: 0px;
+  margin-right: 30px;
+  margin-left: 90px;
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.4); }
+
+.callTime {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  font-size: 20px; }
+
+body.videocall .wrap {
+  background: url(/img/bg-linen-dk.png); }
+body.videocall .wrap > header, body.videocall .wrap > aside, body.videocall #pages {
+  display: none; }
+
+#videos {
+  position: fixed;
+  top: 104px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(/img/bg-linen-dk.png);
+  z-index: 10000;
+  padding: 20px;
+  box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 20px;
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 20px;
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 20px; }
+
+#local, #remote {
+  display: inline-block; }
+
+#remote {
+  width: 100%;
+  height: auto; }
+
+#local {
+  width: 30%;
+  position: absolute;
+  bottom: 20px;
+  right: 40px; }
+
+#localVideo, #remoteVideo {
+  width: 100%;
+  height: auto;
+  background-color: black;
+  float: left;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 20px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=20);
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid black;
+  border-right: 1px solid black; }
+
+.linkVideo footer {
+  position: fixed;
+  bottom: 20px;
+  z-index: 1000000;
+  display: block;
+  margin-left: 140px;
+  color: #cccccc;
+  text-shadow: black 0 1px 1px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=black,Direction=135,Strength=1);
+  padding: 0; }
+  .linkVideo footer p {
+    position: relative;
+    top: 10px; }
+  .linkVideo footer a:link, .linkVideo footer a:visited {
+    color: #cccccc; }
+  .linkVideo footer .logo:link, .linkVideo footer .logo:visited {
+    position: fixed;
+    left: 20px;
+    top: auto;
+    bottom: 20px !important; }
+
+@media (max-width: 800px) {
+  section #search {
+    width: 20%; }
+
+  ul.files button {
+    min-width: 27px;
+    width: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 10px; }
+  ul.files button.deleteFile {
+    position: relative;
+    right: -5px; }
+  ul.files .doStuff {
+    width: 80px;
+    right: -10px; }
+  ul.files li a {
+    padding: 7px 80px 7px 10px; } }
+@media (max-width: 620px) {
+  #addFile {
+    display: none; }
+
+  .wrap > header {
+    display: none; }
+
+  aside {
+    margin-top: 0; }
+    aside header {
+      width: 100%; }
+    aside:after {
+      display: none; }
+
+  #pages:after {
+    display: none; }
+
+  aside header {
+    position: fixed !important;
+    z-index: 1000; }
+    aside header #search {
+      wdith: 150px; }
+
+  #pages header {
+    position: fixed; }
+
+  body {
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding: 0 !important; }
+
+  .wrap {
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    -o-border-radius: 0px;
+    -border-radius: 0px;
+    border-radius: 0px;
+    border-top: 0px;
+    width: auto; }
+
+  #pages, .toggleView, .toggleWrap, .editTools {
+    -webkit-transition: -webkit-transform 0.25s;
+    -moz-transition: -moz-transform 0.3s;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0); }
+
+  .editTools {
+    right: -20px; }
+
+  .fieldContainer label {
+    width: 105px !important; }
+
+  .toggleView, .backToFiles {
+    display: block;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    width: 32px;
+    height: 32px;
+    padding: 2px 0px 0px 6px;
+    margin: 7px 0 0 10px;
+    min-width: 32px; }
+
+  .backToFiles {
+    margin-top: -8px;
+    margin-left: 0px; }
+    .backToFiles:after {
+      content: "d" !important;
+      font-family: "Pictos Custom";
+      -webkit-font-smoothing: antialiased;
+      background-image: #efefef;
+      background-image: -moz-linear-gradient(top, #efefef, #bbbbbb);
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #efefef), color-stop(1, #bbbbbb));
+      -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+      border-left: 1px solid rgba(0, 0, 0, 0.05);
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
+      border-top: 1px solid white;
+      border-bottom: 1px solid #aaaaaa;
+      font-size: 16px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -khtml-border-radius: 5px;
+      -o-border-radius: 5px;
+      -border-radius: 5px;
+      border-radius: 5px;
+      display: inline-block;
+      text-align: center;
+      padding: 7px 11px;
+      color: rgba(0, 0, 0, 0.8);
+      font-weight: bold;
+      text-shadow: white 0 1px 0px;
+      -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=white,Direction=135,Strength=0);
+      min-width: 0px;
+      width: 10px;
+      height: 16px; }
+
+  .toggleView {
+    left: 0; }
+    .toggleView:after {
+      display: none; }
+
+  .toggleWrap {
+    display: block;
+    top: 0px;
+    left: 0;
+    height: 1px;
+    padding: 10px;
+    position: fixed;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 1000;
+    width: 100%; }
+
+  .wrap {
+    overflow-x: hidden; }
+
+  header {
+    background-image: transparent;
+    background-image: -moz-linear-gradient(top, transparent, transparent);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, transparent));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border: 0px;
+    position: fixed;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    -o-border-radius: 0px;
+    -border-radius: 0px;
+    border-radius: 0px;
+    z-index: 1;
+    background: #c3cbce url(/img/paper.jpg);
+    width: 100%;
+    height: 48px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=5); }
+    header select {
+      margin-top: 0;
+      top: 10px; }
+    header input {
+      margin-left: 0;
+      left: 10px;
+      top: 7px;
+      max-width: 1000px;
+      width: 35%;
+      font-size: 14px;
+      padding: 9px 10px 6px 10px; }
+    header button {
+      padding: 8px; }
+      header button#addContact {
+        position: absolute;
+        right: 18%;
+        top: 8px;
+        left: auto; }
+
+  #pages {
+    background-color: #fafafa;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 60px 10px 100px 10px;
+    z-index: 1000;
+    position: fixed;
+    overflow-y: auto;
+    left: 0;
+    top: 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=5);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+
+  .page {
+    margin: 0;
+    padding: 10px 0; }
+    .page #search {
+      width: 150px;
+      margin: 6px 0 0 50px; }
+    .page #addFile {
+      top: 9px;
+      right: 0px; }
+    .page .backToFiles {
+      left: 50px;
+      z-index: 100000; }
+
+  .mainContent {
+    margin-left: 0; }
+
+  aside {
+    border-left: 0px none;
+    top: 0px;
+    bottom: 0;
+    padding-top: 46px;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 0px transparent; }
+    aside li:last-child {
+      margin-bottom: 100px; }
+
+  aside header, section header {
+    position: absolute;
+    left: 0;
+    top: 0; }
+
+  .drawerOpen #pages, .drawerOpen .toggleWrap {
+    -webkit-transform: translateX(85%);
+    -moz-transform: translateX(85%); }
+
+  .drawerOpen .editTools {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%); } }
+footer, .updateFile {
+  display: none; }
+
+.loginDoors {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }

@@ -1,0 +1,181 @@
+@import _define
+
+body
+  background-color: $backblue
+
+footer
+  display: block
+
+.wrap
+  background-color: #fafafa
+  +shadow(rgba(0,0,0,.2),0,0,30)
+  margin: 40px auto
+  width: 320px
+  +roundall(10px)
+  border-top: 1px solid #fff
+  border-bottom: 1px solid #777
+  position: relative
+
+.action
+  background-color: #fff
+  +roundall(7px)
+  padding: 20px 40px
+
+#welcome .wrap, #docs .wrap
+  width: 620px
+  padding: 10px
+
+#intro
+  width: 250px
+  float: left
+  margin: 0px 0px 30px 50px
+
+  h1
+    font-size: 50px
+    font-weight: bold
+    margin-bottom: 5px
+    line-height: 1
+
+  h2
+    margin-top: 0
+
+  #try
+    margin: 0 20px
+
+#upload
+  width: 100%
+
+.about
+  clear: both
+  float: left
+  width: 250px
+  display: block
+  text-align: left
+  color: #555
+  margin-right: 30px
+  font-size: 14px
+
+
+#welcome
+
+  hr
+    clear: both 
+
+  ul
+    width: 240px
+    float: left
+    text-align: left
+    padding: 0
+    position: relative
+    list-style: none
+
+  li
+    font-size: 14px
+    margin-bottom: 8px
+
+
+#docs
+
+  h1
+    text-align: left
+    margin: 60px 0 20px 0
+
+    &:first-child
+      margin-top: 0
+
+  h2 + pre
+    margin-top: 0px
+
+  .action
+    text-align: left
+
+    h2
+      color: #21A8D3
+      margin-bottom: 5px
+      margin-top: 30px
+      text-align: left
+
+    p, li, ol
+      font-size: 14px
+      color: #555
+      line-height: 130%
+    p
+      margin: 0 0 15px 0
+
+    pre
+      padding: 10px
+      background-color: #333
+      +roundall(5px)
+
+    code
+      font-size: 14px
+      color: #fff
+      +text_shadow(#000,0,1px,0)
+
+    p code
+      background-color: #333
+      padding: 0 2px
+
+
+
+button, #auth, #upload, #try
+  display: block
+  background-color: #21A8D3
+  padding: 10px
+  border: 0px none
+  color: #fff
+  font-size: 16px
+  font-weight: 500
+  +text_shadow(rgba(0,0,0,.3),0,-1px,0)
+  +roundall(30px)
+  +gradient($orange + #333, $orange)
+  border-top: 2px solid $orange + #555
+  border-bottom: 2px solid $orange - #333
+  text-decoration: none
+  cursor: pointer
+  text-align: center
+
+  &:active
+    border-bottom: 2px solid $orange + #555
+    border-top: 2px solid $orange - #333
+    padding: 11px 10px 9px 10px
+
+
+footer
+  border-top: 1px solid $backblue - #111
+  text-align: center
+  color: #fff
+  font-size: 12px
+  +text_shadow($backblue - #444, 0, -1px, 0)
+  &:before
+    content: ""
+    display: block
+    width: 100%
+    border-top: 1px solid rgba(255,255,255,.3)
+
+  p
+    font-size: 11px
+    font-weight: bold
+    width: 600px
+    margin: 0 auto
+    padding: 10px
+    text-align: left
+    position: relative
+
+  a.andyet
+    background: url(/img/andyet-footer-logo.png)
+    text-indent: -9999em
+    width: 45px
+    height: 28px
+    position: absolute
+    right: 80px
+    top: 5px
+    
+  a.foundry
+    background: url(/img/foundry-footer-logo.png)
+    text-indent: -9999em
+    width: 64px
+    height: 17px
+    position: absolute
+    right: 10px
+    top: 10px  

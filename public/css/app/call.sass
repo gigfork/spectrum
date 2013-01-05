@@ -1,0 +1,162 @@
+@import ../_define
+
+=callbar($color)
+  background-color: $color
+  +gradient(rgba(255,255,255,.3), rgba(50,50,50,.1))
+  border:
+    top: 2px solid $color + #222
+    bottom: 2px solid $color - #444
+  +shadow(rgba(0,0,0,.2),0,3px,5)
+
+#callStatus
+  position: fixed
+  top: -90px
+  -webkit-transition: background-color .5s
+
+.callAccept, .callIgnore, .callEnd, .callPush, .callTake, .callAddParty, .callMute, .callHold, .callCancel
+  display: none
+
+.wrap, .wrap > header, aside, aside header, .page, .mainContent header, nav.selectView, #navActions
+  -webkit-transition: top .5s
+
+.call
+  
+  .wrap
+    top: 80px
+
+  nav.selectView
+    top: 105px
+
+  #navActions
+    top: 108px
+
+  .wrap > header
+    top: 100px
+
+  .mainContent header
+    top: 140px
+
+  aside
+    top: 140px
+    header
+      top: 140px
+  .page
+    margin-top: 100px
+  
+  #callStatus
+    display: block
+    width: 100%
+    position: fixed
+    top: 0
+    height: 80px
+    padding: 10px
+    z-index: 1000
+
+    &.incoming
+      +callbar($blue)
+      .callAccept, .callIgnore
+        display: inline-block
+      .callTime
+        display: none
+
+    &.waiting
+      +callbar($orange)
+      .callAccept, .callIgnore, .callEnd, .callPush, .callTake, .callAddParty, .callMute, .callHold, .callCancel, .callTime, .callerAvatar, .callerName
+        display: none   
+
+      .spinner div
+        background-color: #fff
+
+    &.calling
+      +callbar($blue)
+      .callCancel
+        display: inline-block
+      .callTime
+        display: none
+      .callerName:before
+        content: "Calling "
+
+    &.local
+      +callbar($green)
+      .callEnd, .callPush
+        display: inline-block
+
+    &.remote
+      +callbar($blue + #333)    
+      .callTake
+        display: inline-block
+      .callTime
+        display: none
+
+    &.ending
+      +callbar($grey)
+      .callAccept, .callIgnore, .callEnd, .callPush, .callTake, .callAddParty, .callMute, .callHold
+        display: none      
+
+    &.pause
+      +callbar($red)    
+      .callAccept, .callIgnore, .callEnd, .callPush, .callTake, .callAddParty, .callMute, .callHold
+        display: none  
+
+    .callActions
+      position: absolute
+      left: 100px
+      top: 50px
+      display: block
+      width: 100%
+
+    nav
+      float: left
+
+    button
+      +gradient(rgba(255,255,255,.3),rgba(0,0,0,.1))
+      border:
+        top: 1px solid rgba(255,255,255,.7)
+        bottom: 1px solid rgba(0,0,0,.2)
+      width: 100px
+      margin-right: 10px
+      font-size: 16px
+      color: rgba(0,0,0,.8)
+      +text_shadow(rgba(255,255,255,.7),0,1px,0)
+      float: left
+      &:active
+        +inner_shadow(rgba(0,0,0,.2),0,1px,3)
+        padding-top: 8px
+        padding-bottom: 6px
+        border:
+          bottom: 1px solid rgba(255,255,255,.7)
+          top: 1px solid rgba(0,0,0,.2)
+
+.callerAvatar
+  float: left
+  width: 65px
+  height: 65px
+  border: 5px solid #eee
+  margin-right: 10px
+
+.callerName, .callTime
+  font-weight: bold
+  color: #fff
+  +text_shadow(rgba(0,0,0,.7),0,1px,0)
+  line-height: 1
+
+.callerName
+  margin:
+    top: 0px
+    right: 30px
+    left: 90px
+  font-size: 20px
+  padding-bottom: 10px
+  border-bottom: 2px groove rgba(255,255,255,.4)
+
+.callTime
+  position: absolute
+  top: 10px
+  right: 40px
+  font-size: 20px
+
+body.videocall
+  .wrap
+    background: url(/img/bg-linen-dk.png)
+  .wrap > header, .wrap > aside, #pages
+    display: none

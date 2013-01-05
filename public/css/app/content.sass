@@ -1,0 +1,327 @@
+@import ../_define
+
+a:link, a:active
+  color: $backblue - #222
+  text-decoration: none
+
+a:visited
+  color: $backblue + #111
+
+a:hover
+  color: $backblue - #111
+
+a.logo
+  text-indent: -9999em
+  width: 200px
+  height: 35px
+  background-image: url("/img/spectrum-logo.png")
+  +noselect
+
+a.logo:link, a.logo:visited, a.logout:link, a.logout:visited
+  position: absolute
+  color: rgba(255,255,255,.7)
+  +text_shadow(rgba(0,0,0,1),0,1px,2)
+  z-index: 200
+
+a.logo:link, a.logo:visited
+  top: 0px
+
+a.logout:link, a.logout:visited
+  top: 10px
+  font-size: 14px
+
+a.logout:link, a.logout:visited
+  right: 20px  
+
+a.logo:link, a.logo:visited
+  left: 5px
+  font-weight: bold
+
+a.logo:hover, a.logout:hover
+  color: $backblue - #111
+
+.selectView
+  position: fixed
+  left: 300px
+  z-index: 200
+  padding: 0px 10px 0 170px
+  top: 0px
+  +noselect
+
+  a
+    font-weight: 300
+    color: rgba(255,255,255,.7)
+    +text_shadow(rgba(0,0,0,1),0,-1px,0)
+    margin-right: 10px
+    cursor: pointer
+    font-size: 18px
+    padding: 3px 5px 5px 5px
+    width: 80px
+    display: inline-block
+    text-align: center
+    border-top: 3px solid transparent
+    &:before
+      display: none
+
+    &:after
+      content: ""
+      display: block
+      position: absolute
+      top: -40px
+      +shadow(rgba(255,255,255,.18),0,10px,10)
+      +roundall(40px)
+      height: 20px
+      +borderbox
+    &.selectMessages.selected
+      color: #fff
+      &:after
+        left: 25px
+        width: 80px
+        top: -20px
+
+    &.selectFiles.selected
+      color: #fff
+      &:after
+        left: 175px
+        width: 80px
+        top: -20px
+
+    &.selectLocation.selected
+      color: #fff
+      &:after
+        left: 275px
+        width: 80px
+        top: -20px
+
+    &:hover, &.selected
+      color: rgba(255,255,255,.85)
+      +text_shadow(rgba(0,0,0,1),0,-1px,2)
+      border-top: 3px solid $backblue
+    
+.page
+  h1, h2, li
+    text-align: left
+
+  h1
+    color: #333
+
+  h2
+    clear: both
+    font-size: 20px
+    padding-top: 10px
+    margin: 0px 0 10px 0
+    color: rgba(0,0,0,.3)
+    +text_shadow(#fff,0,1px,0)
+
+  h3, h4
+    margin: 0
+
+  dl
+    clear: both
+    font-size: 13px
+
+  dt, dd
+    padding-bottom: 5px
+
+  dt
+    width: 140px
+    float: left
+    text-indent: 35px
+    text-transform: capitalize
+
+    &:empty
+      content: ""
+      height: 10px
+      width: 140px
+
+  dd
+    margin: 0 0 20px 0
+    font-weight: bold
+    border-bottom: 1px solid #eee
+
+  .addContactTitle
+    border-bottom: 2px groove rgba(255,255,255,.3)
+
+  .fieldContainer
+    clear: both
+    border-bottom: 2px groove rgba(255,255,255,.3)
+    margin-bottom: 10px
+    &:first-child
+      padding-top: 10px
+
+    label
+      float: left
+      width: 140px
+      font-size: 14px
+      padding: 5px 0
+
+    input
+      float: left
+      
+
+
+h1
+  font-weight: 800
+  margin: 0 0 10px 0
+  color: $textblue
+  font-weight: 300
+  line-height: 1
+
+h2
+  font-size: 20px
+  font-weight: 300
+  margin: 0 0 20px 0
+  color: #777
+
+
+h3
+  font-size: 14px
+
+
+.appList
+  padding: 0
+  list-style: none
+  margin-top: 0
+
+  .app
+    padding: 10px 20px 10px 90px
+    background-image: url(/img/white-soft-noise.png)
+    +inner_shadow(rgba(0,0,0,.3),0,0,5)
+    border-bottom: 2px solid #fff
+    border-top: 1px solid rgba(0,0,0,.2)
+    +roundall(5px)
+    position: relative
+
+  .appImage
+    width: 50px
+    height: 50px
+    position: absolute
+    left: 20px
+    top: 20px
+
+  .appName
+    line-height: 1
+    margin-top: 10px
+    padding: 0
+
+  p
+    margin-top: 10px
+
+.appNote
+  font-size: 13px
+
+
+  &:before
+    font-style: normal
+    color: $blue
+
+
+// welcome view
+.welcomePage
+  margin-left: 300px
+  background: #fafafa
+  height: 100%
+  
+  h1, h2, h3
+    margin: 10px
+    text-align: center
+    line-height: 1
+    color: #555
+
+  h1
+    margin-top: 20px
+    width: 410px
+    height: 130px
+    background-image: url(/img/spectrum-logo-large.png)
+    text-indent: -9999em
+    margin: 0 auto
+
+  h2
+    margin-top: 0
+    font-size: 20px
+    font-weight: 400
+
+  h3
+    font-size: 28px
+    font-weight: 200
+    color: $blue
+
+.aboutSpectrum 
+  max-width: 520px
+  margin: 20px auto
+
+  h4
+    font-size: 20px
+    color: #555
+
+  p
+    font-size: 16px
+    color: #555
+    margin-top: 5px
+
+  span
+    font-size: 40px
+    position: absolute
+    left: 20px
+    top: 35px
+
+  span, h4
+    +text_shadow(#fff,0,1px,0)
+
+  div
+    float: left
+    width: 220px
+    display: block
+    // background-color: rgba(0,0,0,.7)
+    min-width: 100px
+    max-width: 350px
+    padding: 20px 0px 0px 100px
+    position: relative
+    +borderbox
+
+    &:nth-child(odd)
+      margin: 20px
+
+    &:nth-child(even)
+      margin: 20px
+
+.aboutSpectrum div
+  &:after
+    position: absolute
+    top: -3px
+    left: 85px
+    content: ""
+    min-height: 90px
+    height: 90%
+    width: 10px
+    +shadow(rgba(0,0,0,.06),-5px,0,10)
+    +borderbox 
+    margin: 5px 0
+    +roundall(10px)
+    z-index: 1
+  &:before
+    position: absolute
+    top: -3px
+    left: 85px
+    content: ""
+    min-height: 100px
+    height: 100%
+    width: 10px
+    background-color: #fafafa
+    z-index: 2
+
+.aboutMessaging 
+  span, h4
+    color: $blue
+
+.aboutPhone
+  span, h4
+    color: $orange
+
+.aboutVideo
+  span, h4
+    color: $orange2
+
+.aboutFiles
+  span, h4
+    color: $green

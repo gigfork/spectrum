@@ -1,0 +1,282 @@
+#dialog
+  position: fixed
+  left: 50%
+  top: 20%
+  //shouldn't hard code the dimensions
+  //width: 500px
+  z-index: 1000
+  background-color: #fafafa
+  +shadow(rgba(0,0,0,.2),0,0,30)
+  +roundall(10px)
+  border-top: 1px solid #fff
+  border-bottom: 1px solid #777
+
+  .content
+    background-color: #fff
+    +roundall(7px)
+    margin: 10px
+    padding: 10px
+    min-width: 300px
+    min-height: 100px    
+
+  .spinContainer
+    display: block
+    position: relative
+    width: 100%
+    height: 50px
+    margin-top: 10px
+
+  h1
+    margin: 0 0 5px 0
+    font-size: 26px
+    font-weight: normal
+  p
+    margin: 0
+    padding: 0
+    font-size: .9em
+  &.modal
+    box-shadow: 0 1px 8px 0 black
+  .close
+    position: absolute
+    top: -8px
+    right: -8px
+    text-decoration: none
+    color: #555
+    font-size: 25px
+    font-weight: bold
+    display: none
+    line-height: 1
+    background-color: rgba(200,200,200,.9)
+    padding: 0px 8px 7px 8px
+    line-height: 1
+    +roundall(60px)
+    +shadow(rgba(0,0,0,.5),0,0,2)
+  &.closable .close
+    display: block
+  .close
+    &:hover
+      +inner_shadow(rgba(10,0,0,.5),0,0,2)
+      background-color: #fff
+      color: red - #222
+    &:active
+      margin-top: 1px
+  &.slide
+    -webkit-transition: opacity 300ms, top 300ms
+    -moz-transition: opacity 300ms, top 300ms
+    &.hide
+      opacity: 0
+      top: -500px
+  &.fade
+    -webkit-transition: opacity 300ms
+    -moz-transition: opacity 300ms
+    &.hide
+      opacity: 0
+  &.scale
+    -webkit-transition: -webkit-transform 300ms
+    -moz-transition: -moz-transform 300ms
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    &.hide
+      -webkit-transform: scale(0)
+      -moz-transform: scale(0)
+
+/* close
+
+/* slide
+
+/* fade
+
+/* scale
+
+#overlay
+  position: fixed
+  top: 0
+  left: 0
+  opacity: 1
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.75)
+  transition: opacity 300ms
+  z-index: 500
+  &.hide
+    pointer-events: none
+    opacity: 0
+
+.confirmation .actions
+  border-top: 1px solid #eee
+  padding: 5px
+  text-align: right
+  background: #fafafa
+  box-shadow: inset 0 1px 0 white
+  +round(0,0,10px,10px)
+
+.color-picker canvas
+  border: 1px solid #888
+  &:active
+    cursor: none
+
+#notifications
+  position: fixed
+  top: 10px
+  right: 15px
+  li
+    margin-bottom: 5px
+    list-style: none
+
+.notification
+  position: relative
+  max-width: 600px
+  min-width: 250px
+  border: 1px solid #eee
+  background: white
+  z-index: 100
+  .content
+    padding: 15px 20px
+  h1
+    margin: 0 0 5px 0
+    font-size: 16px
+    font-weight: normal
+  p
+    margin: 0
+    padding: 0
+    font-size: .9em
+  .close
+    position: absolute
+    top: 5px
+    right: 10px
+    text-decoration: none
+    color: #888
+    display: none
+  &.closable .close
+    display: block
+  .close
+    &:hover
+      color: black
+    &:active
+      margin-top: 1px
+    position: absolute
+    top: 3px
+    right: 10px
+    text-decoration: none
+    color: #888
+    font-size: 16px
+    font-weight: bold
+    display: none
+  &.slide
+    -webkit-transition: opacity 300ms, top 300ms
+    -moz-transition: opacity 300ms, top 300ms
+    &.hide
+      opacity: 0
+      top: -500px
+  &.fade
+    -webkit-transition: opacity 300ms
+    -moz-transition: opacity 300ms
+    &.hide
+      opacity: 0
+  &.scale
+    -webkit-transition: -webkit-transform 300ms
+    -moz-transition: -moz-transform 300ms
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    &.hide
+      -webkit-transform: scale(0)
+      -moz-transform: scale(0)
+
+/* close
+
+/* slide
+
+/* fade
+
+/* scale
+
+.split-button
+  display: inline-block
+  border: 1px solid #eee
+  a
+    display: inline-block
+    float: left
+    height: 20px
+    line-height: 20px
+    padding: 5px 10px
+    text-decoration: none
+    -webkit-user-select: none
+    -moz-user-select: none
+  .toggle
+    border-left: 1px solid #eee
+    span
+      display: block
+      margin-top: 8px
+      border-left: 4px solid transparent
+      border-right: 4px solid transparent
+      border-top: 4px solid #888
+
+.menu
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 100
+  margin: 0
+  padding: 0
+  background: white
+  border: 1px solid rgba(0, 0, 0, 0.2)
+  li
+    list-style: none
+    a
+      display: block
+      padding: 5px 30px 5px 12px
+      text-decoration: none
+      border-top: 1px solid #eee
+      color: #2e2e2e
+    &:first-child a
+      border-top: none
+    a:hover
+      background: #f1faff
+
+/* from: http://desandro.github.com/3dtransforms
+
+.card
+  width: 200px
+  height: 260px
+  position: relative
+  perspective: 800
+  .wrapper
+    width: 100%
+    height: 100%
+    position: absolute
+    -webkit-transform-style: preserve-3d
+    -moz-transform-style: preserve-3d
+    -webkit-transition: -webkit-transform 500ms ease-in-out
+    -moz-transition: -moz-transform 500ms ease-in-out
+    border: 1px solid #eee
+    border-bottom-color: #cacaca
+    border-radius: 3px
+    -webkit-box-shadow: inset 0 -1px 0 0 white, 0 1px 4px 0 #dddddd
+    -moz-box-shadow: inset 0 -1px 0 0 white, 0 1px 4px 0 #dddddd
+  .face
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+    -webkit-backface-visibility: hidden
+    -moz-backface-visibility: hidden
+  .back
+    -webkit-transform: rotateY(180deg)
+    -moz-transform: rotateY(180deg)
+  &.flipped .wrapper
+    -webkit-transform: rotateY(180deg)
+    -moz-transform: rotateY(180deg)
+  &.sideflip
+    .wrapper
+      -webkit-transform-origin: right center
+      -moz-transform-origin: right center
+    &.flipped .wrapper
+      -webkit-transform: translateX(-100%) rotateY(180deg)
+      -moz-transform: translateX(-100%) rotateY(180deg)
+
+/* sideflip effect
+
+#login
+  text-align: center
+  p 
+    margin-bottom: 15px

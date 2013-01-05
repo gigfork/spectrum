@@ -1,0 +1,26 @@
+!!!
+html
+  head
+    script(src="/jslibs/jquery.js")
+    //script(src="http://ci.voxeolabs.net/jenkins/job/PhonoSDK/lastBuild/artifact/artifacts/sdk/samples/kitchen-sink/www/jquery.phono.js")
+    script(src="/jslibs/jquery.phono-webrtc.js")
+    script(src="/jslibs/underscore.js")
+    script(src="/js/static-video-page.js")
+    link(type="text/css", rel="stylesheet", href="/css/reset.css")
+    link(type="text/css", rel="stylesheet", href="/css/style.css")
+    link(type="text/css", rel="stylesheet", href="//get.pictos.cc/fonts/988/3")
+  body.linkVideo.call
+    .wrap
+      #callStatus.local
+        img.callerAvatar(src="{{picUrl}}")
+        h1.callerName Name of Caller
+        h2.callTime 1:16:40
+        .callActions
+        button(class="callEnd", data-action="hangUp") End Call
+      #videos
+        #local
+          video#localVideo(autoplay="autoplay")
+        #remote
+          video#remoteVideo(autoplay="autoplay")
+    footer
+      a.logo(href="#")spectrum

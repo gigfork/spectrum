@@ -1,0 +1,204 @@
+#callStatus {
+  position: fixed;
+  top: -90px;
+  -webkit-transition: background-color 0.5s; }
+
+.callAccept, .callIgnore, .callEnd, .callPush, .callTake, .callAddParty, .callMute, .callHold, .callCancel {
+  display: none; }
+
+.wrap, .wrap > header, aside, aside header, .page, .mainContent header, nav.selectView, #navActions {
+  -webkit-transition: top 0.5s; }
+
+.call .wrap {
+  top: 80px; }
+.call nav.selectView {
+  top: 105px; }
+.call #navActions {
+  top: 108px; }
+.call .wrap > header {
+  top: 100px; }
+.call .mainContent header {
+  top: 140px; }
+.call aside {
+  top: 140px; }
+  .call aside header {
+    top: 140px; }
+.call .page {
+  margin-top: 100px; }
+.call #callStatus {
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 80px;
+  padding: 10px;
+  z-index: 1000; }
+  .call #callStatus.incoming {
+    background-color: #41ade0;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #63cfff;
+    border-bottom: 2px solid #00699c;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.incoming .callAccept, .call #callStatus.incoming .callIgnore, .call #callStatus.incoming .callPush {
+      display: inline-block; }
+    .call #callStatus.incoming .callTime {
+      display: none; }
+  .call #callStatus.waiting {
+    background-color: #f47820;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #ff9a42;
+    border-bottom: 2px solid #b03400;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.waiting .callAccept, .call #callStatus.waiting .callIgnore, .call #callStatus.waiting .callEnd, .call #callStatus.waiting .callPush, .call #callStatus.waiting .callTake, .call #callStatus.waiting .callAddParty, .call #callStatus.waiting .callMute, .call #callStatus.waiting .callHold, .call #callStatus.waiting .callCancel, .call #callStatus.waiting .callTime, .call #callStatus.waiting .callerAvatar, .call #callStatus.waiting .callerName {
+      display: none; }
+    .call #callStatus.waiting .spinner div {
+      background-color: white; }
+  .call #callStatus.calling {
+    background-color: #41ade0;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #63cfff;
+    border-bottom: 2px solid #00699c;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.calling .callCancel {
+      display: inline-block; }
+    .call #callStatus.calling .callTime {
+      display: none; }
+    .call #callStatus.calling .callerName:before {
+      content: "Calling "; }
+  .call #callStatus.local {
+    background-color: #77a803;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #99ca25;
+    border-bottom: 2px solid #336400;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.local .callEnd, .call #callStatus.local .callPush {
+      display: inline-block; }
+  .call #callStatus.remote {
+    background-color: #74e0ff;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #96ffff;
+    border-bottom: 2px solid #309cbb;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.remote .callTake {
+      display: inline-block; }
+  .call #callStatus.ending {
+    background-color: #bbbbbb;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #dddddd;
+    border-bottom: 2px solid #777777;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.ending .callAccept, .call #callStatus.ending .callIgnore, .call #callStatus.ending .callEnd, .call #callStatus.ending .callPush, .call #callStatus.ending .callTake, .call #callStatus.ending .callAddParty, .call #callStatus.ending .callMute, .call #callStatus.ending .callHold {
+      display: none; }
+  .call #callStatus.pause {
+    background-color: #f4252f;
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(50, 50, 50, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(50, 50, 50, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 2px solid #ff4751;
+    border-bottom: 2px solid #b00000;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
+    .call #callStatus.pause .callAccept, .call #callStatus.pause .callIgnore, .call #callStatus.pause .callEnd, .call #callStatus.pause .callPush, .call #callStatus.pause .callTake, .call #callStatus.pause .callAddParty, .call #callStatus.pause .callMute, .call #callStatus.pause .callHold {
+      display: none; }
+  .call #callStatus .callActions {
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    display: block;
+    width: 100%; }
+  .call #callStatus nav {
+    float: left; }
+  .call #callStatus button {
+    background-image: rgba(255, 255, 255, 0.3);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.3)), color-stop(1, rgba(0, 0, 0, 0.1)));
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0px;
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.7),Direction=135,Strength=0);
+    float: left; }
+    .call #callStatus button:active {
+      box-shadow: inset rgba(0, 0, 0, 0.2) 0 1px 3px;
+      -moz-box-shadow: inset rgba(0, 0, 0, 0.2) 0 1px 3px;
+      -webkit-box-shadow: inset rgba(0, 0, 0, 0.2) 0 1px 3px;
+      padding-top: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      border-top: 1px solid rgba(0, 0, 0, 0.2); }
+
+.callerAvatar {
+  float: left;
+  width: 65px;
+  height: 65px;
+  border: 5px solid #eeeeee;
+  margin-right: 10px; }
+
+.callerName, .callTime {
+  font-weight: bold;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.7) 0 1px 0px;
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.7),Direction=135,Strength=0);
+  line-height: 1; }
+
+.callerName {
+  margin-top: 0px;
+  margin-right: 30px;
+  margin-left: 90px;
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.4); }
+
+.callTime {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  font-size: 20px; }
+
+body.videocall .wrap {
+  background: url(/img/bg-linen-dk.png); }
+body.videocall .wrap > header, body.videocall .wrap > aside, body.videocall #pages {
+  display: none; }

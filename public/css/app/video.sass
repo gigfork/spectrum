@@ -1,0 +1,61 @@
+@import ../_define
+
+#videos
+	position: fixed
+	top: 104px
+	bottom: 0
+	left: 0
+	right: 0
+	background-image: url(/img/bg-linen-dk.png)
+	z-index: 10000
+	padding: 20px
+	+inner_shadow(rgba(0,0,0,.5),0,0,20)
+
+#local, #remote
+	display: inline-block
+
+#remote
+	width: 100%
+	height: auto
+
+#local
+	width: 30%
+	position: absolute
+	bottom: 20px
+	right: 40px
+
+#localVideo, #remoteVideo
+	width: 100%
+	height: auto
+	background-color: black
+	float: left
+	+shadow(rgba(0,0,0,.5),0,0,20)
+	border:
+		bottom: 1px solid rgba(0,0,0,1)
+		top: 1px solid rgba(255,255,255,.5)
+		left: 1px solid rgba(0,0,0,1)
+		right: 1px solid rgba(0,0,0,1)
+
+
+.linkVideo footer
+	position: fixed
+	bottom: 20px
+	z-index: 1000000
+	display: block
+	margin-left: 140px
+	color: #ccc
+	+text_shadow(rgba(0,0,0,1),0,1px,1)
+	padding: 0
+
+	p
+		position: relative
+		top: 10px
+
+	a:link, a:visited
+		color: #ccc
+
+	.logo:link, .logo:visited
+		position: fixed
+		left: 20px
+		top: auto
+		bottom: 20px !important

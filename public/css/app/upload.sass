@@ -1,0 +1,59 @@
+@import ../_define
+
+#dropZone
+	width: 400px
+	height: 200px
+	margin: 20px auto 20px auto
+	+radial($backblue + #333, $backblue - #111)
+	border: 
+		top: 1px solid rgba(0,0,0,.4)
+		bottom: 1px solid rgba(255,255,255,1)
+		left: 1px solid rgba(0,0,0,.2)
+		right: 1px solid rgba(0,0,0,.2)
+	+inner_shadow(rgba(0,0,0,.6),0,0px,20)
+	+roundall(20px)
+	cursor: pointer
+	z-index: 100
+
+.dialogContainer
+	p
+		font-size: 16px !important
+		position: absolute
+		top: 130px
+		width: 400px
+		text-align: center
+		z-index: 100
+		font-weight: bold
+		margin: 0
+		padding: 0
+		color: #333
+		+text_shadow(rgba(255,255,255,.5),0,1px,0)
+
+	strong
+		font-size: 20px	!important
+		margin: 10px 0	
+		display: block
+
+	em
+		font-size: 20px
+		margin: 10px 0
+		display: block
+		font-weight: bold
+		&:before
+			content: "— "
+		&:after
+			content: " —"
+
+	&:hover
+
+		#dropZone
+			+radial($backblue + #666, $backblue - #111)
+			+inner_shadow(rgba(0,0,0,.6),0,3px,30)
+
+		p, em
+			color: #333
+			+text_shadow(rgba(255,255,255,.5),0,1px,0)
+
+#fileInput
+	position: absolute
+	z-index: -1000

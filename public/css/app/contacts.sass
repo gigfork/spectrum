@@ -1,0 +1,341 @@
+@import ../_define
+
+// left side
+aside
+  width: 300px
+  top:  $headerheight
+  bottom: 0px
+  position: fixed
+  background: #c3cbce url(/img/bg-linen-lt.png)
+  margin: 40px 0 0 0 
+  overflow-y: scroll
+  +inner_shadow(rgba(0,0,0,.5),0,3px,5)
+
+
+  ul, li
+    list-style: none
+    margin: 0
+    z-index: -10
+
+  ul
+    padding: 0
+
+  li
+    font-weight: 300
+    padding: 5px 10px 5px 10px
+    font-size: 15px
+    border-top: 2px groove rgba(255,255,255,.3)
+    cursor: pointer
+    -webkit-tap-highlight-color: transparent
+    +noselect
+    &:hover
+      background-color: rgba(255,255,255,.1)      
+    &.contact.selected
+      background-color: rgba(0,0,0,.3)
+      +inner_shadow(rgba(0,0,0,.5),0,0,8)
+      border-top: 1px solid transparent
+      border-bottom: 1px solid rgba(255,255,255,.8)
+
+      h3
+        color: #fff
+        +text_shadow(rgba(0,0,0,1),0,-1px,0)
+    &.conversation.selected
+      background-color: rgba(255,255,255,.8)
+
+#contact header nav
+  margin-top: 0px
+  position: fixed
+  right: 5px
+
+.contactImage
+  width: 100px
+  height: 100px
+  background-color: #fafafa
+  border: 10px solid #fff
+  +shadow(rgba(0,0,0,.1),0,0,8)
+  float: left
+  margin: 0px 20px 20px 0
+  +noselect
+
+.talkyTalkerton
+  text-align: right
+  position: fixed
+  right: 20px
+
+.startActions
+  position: absolute
+  right: 3px
+  top: 6px
+  z-index: 1000
+
+.mainContent .startActions
+  z-index: 10
+  left: 20px
+  top: 3px
+  max-width: 50%
+  button
+    min-width: 120px
+    width: auto 
+  button
+    display: inline-block
+
+#contact 
+
+  h1, h3, h4
+    color: #555
+
+  h1
+    padding-top: 10px
+    font-size: 32px
+    font-weight: 800
+    margin-bottom: 0px
+
+  h3, h4
+    line-height: 160%
+    font-size: 18px
+    font-weight: 400
+
+  h4
+
+  .startPhoneCall
+    display: block
+
+#contact h2
+  color: #555
+  position: relative
+  +borderbox
+  padding: 10px
+
+  a
+    color: #555
+    text-decoration: underline
+    position: relative
+    left: 10px
+
+  &:before
+    position: absolute
+    left: -50px
+    top: 28px
+    color: #777
+    +text_shadow(rgba(255,255,255,.5),0,-1px,3)
+
+.contactDetails
+  margin-left: 120px
+  position: relative
+  clear:both
+  min-height: 1px
+  clear: both
+  &:empty
+    display: none
+
+  &:after
+    position: absolute
+    top: 0
+    left: 2px
+    content: ""
+    height: 100%
+    width: 10px
+    +shadow(rgba(0,0,0,.1),-5px,0,10)
+    +borderbox 
+    margin: 5px 0
+    +roundall(10px)
+    z-index: 1
+  &:before
+    position: absolute
+    top: -5px
+    left: 0px
+    content: ""
+    height: 130%
+    width: 10px
+    background-color: #fafafa
+    z-index: 2
+
+  .startPhoneCall
+    display:block
+
+
+
+    
+
+h2 .startPhoneCall
+  min-width: auto
+  width: auto
+  position: relative
+  top: -2px
+  margin: 0 0 0 20px
+
+.conversationList, .contactList
+
+  li
+    position: relative
+    z-index: 1
+    padding: 15px 35px 15px 30px
+    border-top: 0px none
+    border-bottom: 2px groove rgba(255,255,255,.3)
+                
+  h2
+    font-weight: 500
+    font-size: 18px
+    line-height: 140%
+    margin: 0
+    padding: 0
+    color: rgba(0,0,0,.8)
+    +text_shadow(rgba(255,255,255,.8),0,1px,0)
+  
+  h3
+    font-weight: 500
+    color: rgba(0,0,0,.8)
+    line-height: 1
+    font-size: 15px
+    padding: 0
+    margin: 0
+    +text_shadow(rgba(255,255,255,.7),0,1px,0)
+
+
+.conversationList li
+  background-color: rgba(255,255,255,.25)
+  +shadow(rgba(0,0,0,.3),0,1px,2)
+  border-top: 1px solid rgba(255,255,255,.5)
+  border-bottom: 1px solid rgba(255,255,255,.15)
+  position: relative
+  top: -1px
+  
+  h2
+    color: #555
+    +text_shadow(rgba(255,255,255,.8),0,1px,0)
+  
+  // .newMessage
+  //   display: none 
+
+.messenger
+  &:after
+    content: ", "
+  
+  &:last-child:after
+    content: ""
+
+button.close, .newMessage
+  position: absolute
+  display: inline-block
+
+.newMessage
+  line-height: 1
+  +roundall(60px)
+  padding: 1px 5px 3px 5px
+  font-size: 14px
+  text-align: center
+  top: 50%
+  margin-top: -7px
+      
+button.close
+  min-width: 20px
+  +gradient(transparent, transparent)
+  border: 0px none
+  padding: 0
+  right: 0px
+  top: 50%
+  margin-top: -3px
+  z-index: 20000    
+  cursor: pointer
+
+  &:before
+    margin: 0
+    font-size: 28px
+    font-weight: 100
+    color: rgba(0,0,0,.25)
+    +text_shadow(rgba(255,255,255,.7),0,1px,0)
+    
+  &:hover
+    &:before
+      color: rgba(200,0,0,.7)
+      +text_shadow(rgba(0,0,0,.5),0,1px,0)
+      z-index: 1
+    &:after
+      content: ""
+      display: block
+      background-color: #fff
+      z-index: -1
+      +roundall(60px)
+      width: 20px
+      height: 20px
+      position: absolute
+      left: 1px
+      top: -7px
+
+.selected
+  button.close
+    color: rgba(0,0,0,.4)
+    +text_shadow(rgba(255,255,255,.7),0,1px,0)
+    &:before
+      color: #ccc
+      +text_shadow(rgba(0,0,0,.5),0,-1px,0)
+    &:hover
+      margin-top: -4px
+      &:before
+        color: rgba(200,0,0,.7)
+        +text_shadow(rgba(0,0,0,.5),0,1px,0)
+        z-index: 1
+      &:after
+        content: ""
+        display: block
+        background-color: #fff
+        z-index: -1
+        +roundall(60px)
+        width: 20px
+        height: 20px
+        position: absolute
+        left: 1px
+        top: -7px
+
+.startVideoCall, .startChat, .startPhoneCall
+  display: none  
+
+.onlineStatus
+  display: inline-block
+  position: absolute
+  left: 10px
+  top: 50%
+  margin-top: -4px
+  vertical-align: middle
+  height: 6px
+  width: 2px
+  padding: 1px 5px 4px 5px
+  +roundall(60px)
+  background-color: #555
+  border-bottom: 1px solid transparent
+
+// .offline
+//   .onlineStatus
+//     background-color: $red
+//     border-bottom: 1px solid #333
+
+.online
+  .onlineStatus
+    background-color: $green
+    border-bottom: 1px solid #333
+
+  .startPhoneCall
+    display: none !important
+
+  .startVideoCall, .startChat
+    display: inline-block
+
+.selected .onlineStatus
+  background-color: #ccc
+
+.selected.online .onlineStatus
+  background-color: $green
+  border-bottom: 1px solid #333
+
+.canVideo
+  display: none
+  position: absolute
+  right: 5px
+  top: 10px
+  color: rgba(0,0,0,.3)
+  &.indeed
+    display: inline-block
+
+.hasPhone
+  .startPhoneCall, .startChat
+    display: inline-block

@@ -1,0 +1,155 @@
+=perspective($amount)
+  -webkit-perspective: $amount
+  -moz-perspective: $amount
+  -o-perspective: $amount
+  perspective: $amount
+
+=preserve3d
+  -webkit-transform-style: preserve-3d
+  -moz-transform-style: preserve-3d
+  -o-transform-style: preserve-3d
+  transform-style: preserve-3d
+
+=transition($speed)
+  -webkit-transition: -webkit-transform $speed
+  -moz-transition: -moz-transform $speed
+  -o-transition: -o-transform $speed
+  transition: transform $speed
+
+=backfacehidden
+  -webkit-backface-visibility: hidden
+  -moz-backface-visibility: hidden
+  -o-backface-visibility: hidden
+  backface-visibility: hidden
+
+=transform($what)
+  -webkit-transform: $what
+  -moz-transform: $what
+  -o-transform: $what
+  transform: $what
+
+=origin($position)
+  -webkit-transform-origin: $position
+  -moz-transform-origin: $position
+  -o-transform-origin: $position
+  transform-origin: $position
+
+$height: 600px
+$width: 900px
+
+#boxContainer 
+  width: $width
+  height: $height
+  position: relative
+  margin: 0 auto 40px
+  +perspective(5400px)
+
+#card
+  width: 100%
+  height: 100%
+  position: absolute
+  +preserve3d
+  +transition(1s)
+  +origin(right center)
+
+  div
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+    overflow: hidden
+    background: white
+    +backfacehidden
+
+  .front
+    background: white
+
+  .back
+    background: white
+    +transform(rotateY( 180deg ))
+
+  &.flipped
+    +transform(rotateY( 180deg ))
+
+#box
+  width: 100%
+  height: 100%
+  position: absolute
+  +preserve3d
+  +transition(1s)
+
+  div
+    overflow: hidden
+    display: block
+    position: absolute
+    //line-height: $height
+    font-size: 20px
+    text-align: center
+    font-weight: bold
+    color: white
+    +backfacehidden
+
+  .front, .back
+    width: $width
+    height: $height
+
+  .right, .left
+    width: 100px
+    height: $height
+    left: 100px
+
+  .top, .bottom
+    width: $width
+    height: 100px
+    top: 50px
+    line-height: 100px
+
+  .back 
+    background-image: url(/img/bg-linen-dk.png)
+    //background: hsla( 160, 100%, 50%, 0.7 )
+  .right
+    background-image: url(/img/bg-linen-dk.png)
+  .left 
+    background-image: url(/img/bg-linen-dk.png)
+  .top  
+    background-image: url(/img/bg-linen-dk.png)
+    //background: hsla( 240, 100%, 50%, 0.7 )
+  .bottom
+    background-image: url(/img/bg-linen-dk.png)
+    //background: hsla( 300, 100%, 50%, 0.7 )
+
+  .front
+    +transform(translateZ(50px))
+
+  .back
+    +transform(rotateX( -180deg ) translateZ(  50px ))
+
+  .right
+    +transform(rotateY(   90deg ) translateZ( 150px ))
+
+  .left
+    +transform(rotateY(  -90deg ) translateZ( 150px ))
+
+  .top
+    +transform(rotateX(   90deg ) translateZ( 100px ))
+
+  .bottom
+    +transform(rotateX(  -90deg ) translateZ( 100px ))
+
+  &.show-front
+    +transform(translateZ(  -50px ))
+
+  &.show-back
+    +transform(translateZ( -50px ) rotateX( -180deg ))
+
+  &.show-right
+    +transform(translateZ( -150px ) rotateY(  -90deg ))
+
+  &.show-left
+    +transform(translateZ( -150px ) rotateY(   90deg ))
+
+  &.show-top
+    +transform(translateZ( -100px ) rotateX(  -90deg ))
+
+  &.show-bottom
+    +transform(translateZ( -100px ) rotateX(   90deg ))

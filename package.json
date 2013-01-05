@@ -1,0 +1,26 @@
+{
+  "name": "Spectrum",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "2.5.9",
+    "att-express-auth": "",
+    "jade": "",
+    "nodeunit": "",
+    "connect-redis": "",
+    "request": "",
+    "cli-color": "",
+    "async": "",
+    "stitch": "",
+    "node-uuid": "",
+    "socket.io": "",
+    "underscore": "",
+    "node-uuid": "",
+    "redis": "",
+    "getconfig": ""
+  },
+  "devDependencies": {
+    "precommit-hook": ""
+  },
+  "main": "./server.js"
+}

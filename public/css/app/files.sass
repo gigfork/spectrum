@@ -1,0 +1,74 @@
+@import ../_define
+
+
+a.backToFiles:link, a.backToFiles:visited
+  color: #555
+  font-size: 16px 
+  font-weight: bold
+  padding: 10px !important
+  position: absolute
+  top: 5px
+
+a.backToFiles:hover
+  color: $backblue - #111
+
+#file
+  font-size: 13px
+
+#files li, #files a
+  text-align: left
+
+ul.files
+  padding: 0
+  +roundall(5px)
+  border: 1px solid #e0e0e0
+  z-index: -1
+  margin: 0
+
+  li
+    text-indent: 0
+    font-size: 16px
+    list-style: none
+    display: block
+    position: relative
+    cursor: pointer
+    height: 35px
+    -webkit-transition: height .2s linear
+
+    &:nth-child(odd)
+      background-color: #fafafa
+      border-bottom: 1px solid #efefef
+    &:nth-child(even)
+      background-color: #fdfdfd
+      border-bottom: 1px solid #efefef
+    &:first-child
+      +round(5px,5px,0,0)
+    &:last-child
+      border-bottom: 0px none
+      +round(0,0,5px,5px)
+
+    &:hover
+      a.delete
+        color: #dd0000
+
+    a
+      padding: 7px 230px 7px 10px
+      display: block
+
+    &.delete
+      height: 0px
+      overflow: hidden
+
+    a:link, a:active, a:visited
+      color: #555
+      text-decoration: none
+    a:hover
+      color: $backblue - #111
+      text-decoration: underline
+
+    a:link, a:visited 
+      text-decoration: none
+
+    &:hover
+      .doStuff button
+        opacity: .5

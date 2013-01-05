@@ -1,0 +1,64 @@
+@import _define
+@import app/uikit.sass
+@import app/content.sass
+@import app/icons.sass
+@import app/upload.sass
+@import app/dialer.sass
+@import app/messages.sass
+@import app/contacts.sass
+@import app/files.sass
+@import app/buttonsforms.sass
+@import app/layout.sass
+@import app/call.sass
+@import app/video.sass
+@import app/mobile.sass
+//@import app/3d.sass
+
+//temporary
+footer, .updateFile
+  display: none
+
+
+// iPad-specific styles
+
+.loginDoors
+  overflow: hidden
+
+
+.mainContent
+  padding: 20px !important
+
+#login
+  text-align: center
+  input
+    margin: 20px auto
+
+.selectView a
+  width: 70px
+  font-size: 16px
+  font-weight: bold
+  text-align: center
+
+.startPhoneCall::after, .startVideoCall::after, .startChat::after
+  padding-bottom: 2px
+  border-bottom: 1px solid rgba(0,0,0,.4)
+  
+// portrait iPad
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) 
+
+  .aboutSpectrum
+    margin: 0 auto
+
+  .aboutSpectrum div
+    width: 200px
+    &:nth-child(odd)
+      margin: 10px
+    &:nth-child(even)
+      margin: 10px
+
+    h4
+      font-size: 16px
+      margin-top: 5px
+    p
+      font-size: 13px
+      padding-bottom: 10px

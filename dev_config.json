@@ -1,0 +1,9 @@
+{
+    "hostname": "localhost",
+    "sessionSecret": "keyboard cat",
+    "redisDB": 15,
+    "httpPort": 8500,
+    "baseUrl": "http://localhost:8500",
+    "clientId": "YOUR CLIENT ID",
+    "secret": "YOUR CLIENT SECRET (get from apimatrix.tfoundry.com)"
+}

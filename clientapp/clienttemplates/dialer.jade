@@ -1,0 +1,48 @@
+#screen
+  .dialerwrapper
+    .numberEntry
+    ul#dialpad
+      li
+        button(data-value="1")
+          p 1
+          div &nbsp;
+        button(data-value="2")
+          p 2
+          div abc
+        button(data-value="3")
+          p 3
+          div def
+      li
+        button(data-value="4")
+          p 4
+          div ghi
+        button(data-value="5")
+          p 5
+          div jki
+        button(data-value="6")
+          p 6
+          div mno
+      li
+        button(data-value="7")
+          p 7
+          div pqrs
+        button(data-value="8")
+          p 8
+          div tuv
+        button(data-value="9")
+          p 9
+          div wxyz
+      li
+        button(data-value="#")
+          p #
+          div &nbsp;
+        button(data-value="0")
+          p 0
+          div abc
+        button(data-value="del")
+          p &#9003;
+          div
+- if (locals.footer)
+  footer
+    nav#actions
+      a.call Call

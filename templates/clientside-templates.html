@@ -1,0 +1,550 @@
+    <!-- General body template (wraps everything) -->
+    
+    <!--     contact = |, messages = z, files = d, apps = l, call = k, search = n, dialer = P, call = O, video = V, inbox = B -->
+
+    <script id="app" type="text/x-icanhaz">
+        <div class="loginDoors">
+            <div class="loginDoor left"></div>
+            <div class="loginDoor right"></div>
+        </div>
+        <div id="callStatus">
+            <img class="callerAvatar" src="{{picUrl}}" />
+            <h1 class="callerName">{{caller}}</h1>
+            <h2 class="callTime">1:16:40</h2>
+            <div class="callActions">
+                <button class="callAccept" data-action="answer">Accept</button>
+                <button class="callIgnore" data-action="ignore">Ignore</button>
+                <button class="callEnd" data-action="hangUp">End Call</button>
+                <button class="callCancel" data-action="hangUp">Cancel</button>
+                <nav>
+                    <button class="callMute" data-action="mute">Mute</button>
+                    <button class="callHold" data-action="hold">Hold</button>
+                </nav>
+            </div>
+        </div>
+        <div class="wrap">  
+            <header>
+                <a href="/" class="logo">spectrum</a>
+                <nav class="selectView">
+                    <button class="startNewGroupChat" data-icon="z">New Group Chat</button>
+                    <a class="selectFiles" href="/files" data-icon="d">files</a>
+                    <a class="selectLocation" href="/location">location</a>
+                </nav>
+                <!--a class="sendInvite" href="/send"><button class="videoInvite" data-icon="V">invite</button></a-->
+                <nav id="navActions">
+                  <div id="navButton">
+                    <img class="gravatar" src="{{gravatar}}" />
+                    <span class="arrow"></span>
+                  </div>
+                  <div id="navMenu">
+                    <div class="arrow"></span>
+                    <a href="/apps" data-icon="l">My apps</a>
+                    <a id="refresh">Refresh (temp)</a>
+                    <a href="https://auth.tfoundry.com" data-icon="p">My account</a>
+                    <a href="/logout" data-icon="b">Log out</a>
+                  </div>
+                </nav>                
+                <div class="toggleWrap">
+                    <button data-icon="e" class="toggleView"></button>
+                </div>
+            </header>
+            <aside></aside>
+            <section id="pages"></section>
+            <!-- this isnt dynamically added and removed because of limitations -->
+            <div id="videos">
+                <div id="local" class="imgholder">
+                    <video id="localVideo" autoplay="autoplay"></video>
+                </div>
+                <div id="remote" class="imgholder">
+                    <video id="remoteVideo" autoplay="autoplay"></video>
+                </div>
+            </div>
+            <footer>
+                <p>Copyright © AT&T Foundry. Filesharing app created by &yet.<a href="http://andyet.net" class="andyet">&yet</a><a href="http://developer.att.com/developer/forward.jsp?passedItemId=5300164" class="foundry">AT&T Foundry</a>
+                    </p>
+            </footer>
+        </div>
+    </script>
+
+    <script id="locationPage" type="text/x-icanhaz">
+        <div id="locationPage" class="page" style="box-sizing: border-box; padding-bottom: 80px; height: 100%; width: 100%;">
+            <div class="mainContent" style="height: 100%; width: 100%;">
+                <header>
+                    <h1><span class="found">Location of:</span><span class="locating">Locating:</span> {{phoneNumber}}</h1>
+                    <div class="spinTarget" style="position: absolute; top: 18px; left: 310px;"></span>
+                </header>
+                <div class="container" style="width: 100%; height: 100%; box-sizing: border-box; padding-right: 300px;">
+                    <div class="mapContainer" style="margin: -20px 0 0 -20px; width: 100%; height: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <!-- video page -->
+    <script id="videoPage" type="text/x-icanhaz">
+        <div id="videos" class="page videoView">
+            <aside>
+            </aside>
+            <div class="mainContent">
+                <header>
+                    <h1>Video Call</h1>
+                </header>       
+            </div>
+        </div>
+    </script>
+
+    <script id="shareDialog" type="text/x-icanhaz">
+        <div id="shareDialogContainer">
+            <input value="{{url}}"/>
+            <p>
+                <img class="facebookInvite"  src="/img/facebook_logo.jpg" alt="Invite on Facebook" height="42" />
+            </p>
+        </div>
+    </script>
+
+    <script id="addUserDialog" type="text/x-icanhaz">
+        <div id="addUserDialog">
+            <div class="contacts">
+            {{#contacts}}
+                <div class="contactItem {{online}}" data-number="{{number}}">{{name}}</div>
+            {{/contacts}}
+            </div>
+            <button class="add">Add</button>
+        </div>
+    </script>
+
+    <!-- apps page -->
+    <script id="appsPage" type="text/x-icanhaz">
+        <div id="apps" class="page">
+            <div class="mainContent">
+                <header>
+                    <h1>AT&amp;T Alpha API Apps</h1>
+                </header>            
+                <ul class="appList">
+                    {{#apps}}
+                    <li>
+                        <div class="app">
+                            <a href="{{website}}">
+                                <img class="appImage" src="{{icon_medium}}" />
+                            </a>
+                            <h4 class="appName">{{name}} | Developer: <a href="mailto:{{developer}}">{{developer}}</a></h4>
+                            <p>{{description}}</p>
+                            {{#authorized}}
+                            <p>authorized</p>
+                            {{/authorized}}
+                            {{^authorized}}
+                            <p>not authorized</p>
+                            {{/authorized}}
+                        </div>
+                    </li>
+                {{/apps}}
+                </ul>
+            </div>
+        </div>
+    </script>
+
+    <!-- login dialog template -->
+    <script id="loginDialogSMS" type="text/x-icanhaz">
+        <div id="login">
+            <h1>Welcome!</h1>
+            <p>Enter your mobile number to log in.</p>
+            <div class="dialerContainer"></div>
+        </div>
+    </script>
+
+    <script id="loginDialog" type="text/x-icanhaz">
+        <div id="login">
+            <h1>Welcome!</h1>
+            <p>Please log in with AT&T Auth</p>
+            <a href="/auth" data-ext><button>Connect</button></a>
+        </div>
+    </script>
+
+    <script id="loginWaitingDialog" type="text/x-icanhaz">
+        <div id="login">
+            <h1>Please check your phone</h1>
+            <p>Authorization request has been sent to: <strong>{{phone}}</strong></p>
+            <div class="spinContainer"></div>
+        </div>
+    </script>
+
+    <!-- New contact form template -->
+
+    <script id="contactForm" type="text/x-icanhaz">
+        <div id="contacts" class="page">
+            <div class="mainContent">
+                <header>
+                </header>
+                <form></form>
+            </div>
+        </div>
+    </script>
+    
+    <!--     contact = |, messages = z, files = d, apps = l, call = k, search = n, dialer = P, call = O, video = V, inbox = B -->
+    <script id="homePage" type="text/x-icanhaz">
+        <div id="home" class="page">
+            <div class="mainContent"></div>
+            <div class="welcomePage">
+                <div class="aboutSpectrum">
+                    <div class="aboutMessaging">
+                        <span data-icon="z"></span>
+                        <h4>Messaging</h4>
+                        <p>Message your contact list.</p>
+                    </div>
+                    <div class="aboutPhone">
+                        <span data-icon="O"></span>
+                        <h4>Phone calls</h4>
+                        <p>Call any phone number.</p>
+                    </div>
+                    <div class="aboutVideo">
+                        <span data-icon="V"></span>
+                        <h4>Video chat</h4>
+                        <p>Video chat from your browser.</p>
+                    </div>
+                    <div class="aboutFiles">
+                        <span data-icon="d"></span>
+                        <h4>File sharing</h4>
+                        <p>Store and share your files.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+    <!-- conversation views handle video/audio plus IM -->
+    <script id="conversation" type="text/x-icanhaz">
+        <div id="messages" class="page">
+            <div class="dragOverlay">
+                <h4>Drop here to add to conversation</h4>
+            </div>
+            <div class="mainContent">
+                <header>
+                    <input class="topic"></input>
+                    <button class="addUsers" data-icon="z">Add Users</button>
+                    <div class="members"></div>
+                </header>            
+                <ul class="discussion">
+                {{#messages}}
+                    {{> chatMessage}}
+                {{/messages}}
+                </ul>
+                <form class="chatField">
+                    <input class="chatInput" />
+                    <button class="chatSend" data-icon="z">Chat</button>
+                    {{#contact.getCallableNumber}}
+                    <button class="smsSend" data-icon="k">SMS</button>
+                    {{/contact.getCallableNumber}}
+                </form>
+            </div>
+        </div>
+    </script>
+
+    <script id="chatMember" type="text/x-icanhaz">
+        <div class="chatMember">
+            <span class="name"></span>
+        </div>
+    </script>
+
+    <!-- conversation views handle video/audio plus IM -->
+    <script id="directConversationPage" type="text/x-icanhaz">
+        <div id="messages" class="page">
+            <div class="mainContent">
+                <header>
+                    <h1 class="talkyTalkerton">{{contact.fullName}}</h1>
+                    <div class="startActions">
+                        <button class="viewProfile" data-icon="z">view profile</button>
+                        <button class="call startVideoCall" data-icon="V">Video</button>
+                    </div>
+                </header>            
+                <ul class="discussion">
+                {{#messages}}
+                    {{> chatMessage}}
+                {{/messages}}
+                </ul>
+                <form class="chatField">
+                    <input class="chatInput" />
+                    <button class="chatSend" data-icon="z">Chat</button>
+                    {{#contact.getCallableNumber}}
+                    <button class="smsSend" data-icon="k">SMS</button>
+                    {{/contact.getCallableNumber}}
+                </form>
+            </div>
+        </div>
+    </script>
+
+
+    <!-- conversation list items -->
+    <script id="conversationListItem" type="text/x-icanhaz">
+        <li class="conversation" data-id="conversation_{{id}}">
+            <h2></h2>
+            <button class="close" data-icon="Z" title="Close Conversation"></button>
+            <span class="newMessage new" data-icon="C"></span>
+        </li>
+    </script>
+
+    <!-- Contact list item template -->
+    <script id="contactListItem" type="text/x-icanhaz">
+        <li class="contact {{online}}{{#getCallableNumber}} hasPhone{{/getCallableNumber}}" data-id="contact_{{id}}">
+            <h3>{{getContactName}}</h3>
+            <span class="canVideo" data-icon="V"></span>
+            <span class="onlineStatus"></span>
+            <div class="startActions">
+                <button class="call startPhoneCall" data-icon="P" title="Start Phone Call"></button>
+                <button class="call startVideoCall" data-icon="V" title="Start Video Call"></button>
+            </div>
+        </li>
+    </script>    
+
+    <!-- Contact element used while dragging a user -->
+    <script id="contactDragHelper" type="text/x-icanhaz">
+        <div class="contactDragHelper">
+            <h3>{{getContactName}}</h3>
+        </div>
+    </script>    
+
+
+    <!-- Chat message template -->
+    <script id="chatMessage" type="text/x-icanhaz">
+        <li class="{{#me}}me {{/me}} {{type}}">
+            <div class="chatMsg">
+                <img class="userImage" src="{{picUrl}}" />
+                <h4 class="userName">{{from}}</h4>
+                <span class="time">{{time}}</span>
+                <p>{{body}}</p>
+            </div>
+        </li>  
+    </script>
+
+    <!-- contacts sidebar -->
+    <script id="sidebar" type="text/x-icanhaz">
+        <aside>
+            <header>
+                <input class="search" id="searchContacts" type="search" placeholder="Filter">
+                <button id="showDialer" class="startCall showDialer" href="#" data-icon="P" title='Show Dial Pad'></button>
+                <button id="addContact" title="Add Contact">+<span class="plusContact" data-icon="|"></span></button>
+                                
+            </header>
+            <ul class="conversationList"></ul>
+            <ul class="contactList"></ul>
+        </aside>
+    </script>
+
+    <script id="filePage" type="text/x-icanhaz">
+        <div id="files" class="page">
+            <div class="mainContent">
+                <header>
+                    <nav>
+                        <input class="search" id="searchFiles" type="search" placeholder="Filter files">
+                        <button id="addFile" data-icon="s">Upload a file</button>
+                    </nav>
+                </header>            
+                <ul class="files"></ul>
+            </div>
+        </div>
+    </script>
+
+    <script id="contactsPage" type="text/x-icanhaz">
+        <div id="contacts" class="page">
+            <div class="mainContent">
+                {{#detail}}
+                {{> contactDetail}}
+                {{/detail}}
+            </div>
+        </div>
+    </script>
+
+    <!-- Individual file item template -->
+
+    <script id="fileItem" type="text/x-icanhaz">
+        <li class="file">
+            <a href="{{downloadUrl}}" data-icon="d">{{displayName}}
+                <div style="width: 400px; height: 12px; position: relative; border: 1px solid black" class="bar">
+                    <div style="-webkit-transition: width 1s; height: 12px; background-color: blue" class="progress"></div>
+                </div>
+            </a>
+            <div class="doStuff">
+                <button data-icon="y" class="deleteFile">Delete</button>
+                <button data-icon="m" class="updateFile">Update</button>
+                <button data-icon="a" class="shareFile">Share</button>
+            </div>
+        </li>
+    </script>
+
+
+    <script id="uploadDialog" type="text/x-icanhaz">
+        <div class="dialogContainer"><input id="fileInput" type="file">
+            <div id="dropZone">
+                {{#file}}
+                <p class="update">Drag and drop a new version of<br><strong>{{file.name}} </strong>or click here to select one               
+                </p>
+                {{/file}}
+                {{^file}}
+                <p>Drag and drop a file <em>or </em>click here to select one</p>
+                {{/file}}
+            </div>
+        </div>
+    </script>
+
+    <!-- Share file dialog template -->
+
+    <script id="fileShareDialog" type="text/x-icanhaz">
+        <div class="dialogContainer">
+            <p>Who do you want to send this to?</p>
+            <input id="shareInput">
+        </div>
+    </script>
+
+    <script id="spinnerDialog" type="text/x-icanhaz">
+        <div>{{message}} <div class="spinContainer"></div></div>
+    </script>
+
+    <!-- Contact details template -->
+
+    <script id="contactDetail" type="text/x-icanhaz">
+        <div id="contact">
+            <header>
+                <div class="startActions {{online}}">
+                    <button class="backToChat" data-icon="z">Back to conversation</button>
+                </div>
+                <nav>
+                    <button data-icon="y" class="deleteContact">delete</button>
+                    <button data-icon="m" class="editContact">edit</button>
+                </nav>
+            </header>
+            <img class="contactImage" src="{{picUrl}}">
+            <h1>{{firstName}} {{lastName}}</h1>
+            <h3>{{company}}</h3>
+            <h4>{{title}}</h4>
+            <div class="contactDetails">
+                {{#homePhone}}
+                <h2 data-icon="k">Home: {{homePhone}}<!--button class="call startPhoneCall" data-icon="P" title="Call this number">{{homePhone}}</button-->
+                </h2>
+                {{/homePhone}}
+                {{#workPhone}}
+                <h2 data-icon="k">Work: {{workPhone}}<!--button class="call startPhoneCall" data-icon="P" title="Call this number">{{workPhone}}</button-->
+                </h2>
+                {{/workPhone}}
+                {{#email}}
+                <h2 data-icon="a"><a href="{{email}}">{{email}}</a></h2>
+                {{/email}}
+                {{#im}}
+                <h2 data-icon="z">IM: {{im}}</h2>
+                {{/im}}
+            </div>
+            <div class="doStuff">
+                <button data-icon="y" class="deleteContact">Delete</button>
+                <button data-icon="m" class="editContact">Update</button>
+            </div>
+        </div>
+    </script>
+
+    <!-- Form for adding a contact -->
+
+    <script id="form" type="text/x-icanhaz">
+        <form id="{{id}}_form">
+            <h1 class="addContactTitle">Add a contact</h1>
+            {{#fields}}
+            <div id="{{id}}_parent" class="fieldContainer clearfix">
+                {{#errors}}
+                <span class="error">{{{.}}}</span>
+                {{/errors}}
+                <label for="{{id}}">{{label}}</label>
+                {{#textarea}}
+                    <textarea id="{{id}}" placeholder="{{#placeholder}}{{placeholder}}{{/placeholder}}" name="{{name}}">{{value}})
+                    </textarea>
+                {{/textarea}}
+                {{#input}}
+                    <input id="{{id}}" placeholder="{{#placeholder}}{{placeholder}}{{/placeholder}}" type="{{type}}" name="{{name}}" value="{{value}}">
+                {{/input}}
+                {{#select}}
+                    <select id="{{id}}" name="{{name}}" class="{{cls}}">{{#options}}<option value="{{val}}">{{text}}</option>{{/options}}
+                    </select>
+                {{/select}}
+                {{#helptext}}
+                    <p id="{{id}}_helptext" class="helptext">{{helptext}}</p>
+                {{/helptext}}
+            </div>
+            {{/fields}}
+            <div class="clearfix"></div>
+            <div class="formActions">
+                <button type="submit" data-icon="w" class="submit">{{submitText}}{{^submitText}}Save{{/submitText}}</button>
+                <button type="reset" class="cancel">Cancel</button>
+            </div>
+        </form>
+    </script>
+
+    <!-- Phone dialer -->
+
+    <script id="dialer" type="text/x-icanhaz">
+        <div id="screen">
+            <div class="dialerwrapper">
+                <div class="numberEntry"/>
+                <ul id="dialpad">
+                    <li>
+                        <button data-value="1">
+                            <p>1</p>
+                            <div>&nbsp;</div>
+                        </button>
+                        <button data-value="2">
+                            <p>2</p>
+                            <div>abc</div>
+                        </button>
+                        <button data-value="3">
+                            <p>3</p>
+                            <div>def</div>
+                        </button>
+                    </li>
+                    <li>
+                        <button data-value="4">
+                            <p>4</p>
+                            <div>ghi</div>
+                        </button>
+                        <button data-value="5">
+                            <p>5</p>
+                            <div>jki</div>
+                        </button>
+                        <button data-value="6">
+                            <p>6</p>
+                            <div>mno</div>
+                        </button>
+                    </li>
+                    <li>
+                        <button data-value="7">
+                            <p>7</p>
+                            <div>pqrs</div>
+                        </button>
+                        <button data-value="8">
+                            <p>8</p>
+                            <div>tuv</div>
+                        </button>
+                        <button data-value="9">
+                            <p>9</p>
+                            <div>wxyz</div>
+                        </button>
+                    </li>
+                    <li>
+                        <button data-value="#">
+                            <p>#</p>
+                            <div></div>
+                        </button>
+                        <button data-value="0">
+                            <p>0</p>
+                            <div></div>
+                        </button>
+                        <button data-value="del">
+                            <p>&#9003;</p>
+                            <div></div>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            {{#footer}}
+            <footer>
+                <nav id="actions">
+                    <a class="call">Call</a>
+                </nav>
+            </footer>
+            {{/footer}}
+        </div>
+    </script>

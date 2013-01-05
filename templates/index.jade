@@ -1,0 +1,22 @@
+!!! 5
+html
+  head
+    title
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    meta(charset="utf-8")
+    script(src="//maps.googleapis.com/maps/api/js?key=AIzaSyAAm3OqN2v-cjfIrBD0a2hfOnsVB0wvavU&sensor=true")
+    script(src="/app.js")
+    link(type="text/css", rel="stylesheet", href="/css/pictos_custom.css")
+    link(type="text/css", rel="stylesheet", href="/css/reset.css")
+    link(type="text/css", rel="stylesheet", href="/css/style.css")
+    script
+      $(function () {
+        var App = require('spectrum');
+          window.app = new App;
+          // register a global handler for ajax errors
+          //$(document).ajaxError(app.handleAjaxError);
+          window.app.blastOff();
+      });
+    
+    include clientside-templates.html
+  body
