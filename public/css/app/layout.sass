@@ -1,7 +1,7 @@
 @import ../_define
 
 body
-  background-color: #fafafa
+  background-color: #fff
   font-family: "Helvetica Neue", "HelveticaNeue", "Helvetica-Neue", "HelveticaNeue-Light", Arial, sans-serif
   +borderbox
 
@@ -10,7 +10,7 @@ body
 
 // outer wrapper
 .wrap
-  background-color: #fafafa
+  background-color: #fff
   +borderbox
   margin: 0
   position: absolute
@@ -28,7 +28,6 @@ body
   overflow: hidden
   margin-top: $headerheight + 40px
   margin-left: 0px
-  background-color: #fafafa
   padding: 0
   width: 100%
   +borderbox
@@ -49,8 +48,7 @@ body
   position: fixed
   width: 100%
   left: 0
-  background-image: url(/img/bg-linen-dk.png)
-  border-bottom: 1px solid #fff
+  +gradient(#404040, #4d4d4d)
   +borderbox
   z-index: 100
   &:before
@@ -64,20 +62,42 @@ body
 
 // right side content
 .mainContent      
-  margin-left: 300px
+  position: relative
+  margin-left: 250px
   padding: 20px 20px 100px 20px
 
   header
-    +gradient(#f3f3f3,#f0f0f0)
     right: 0
-    left: 300px
-    border-bottom: 1px solid #c4c6c8
+    left: 250px
+    border-bottom: 1px solid #eee
+    overflow: hidden
+    background: #f5f5f5
 
 .topic
+  margin-top: 2px
   border: 1px solid #aaa
   +roundall(3px)
-  width: 120px
-  background: rgba(255,255,255,.5)
+  width: 80px
+  -webkit-transition: width .3s
+  font-weight: bold
+  position: relative
+  display: inline-block
+  z-index: 1000
+  border: 1px transparent
+  border-bottom: 1px solid #eee
+  &:hover
+    background: #eee
+  &:focus
+    width: 99%
+    background: #eee
+  &:after
+    content: "..."
+    font-size: 20px
+    font-weight: bold
+    position: absolute
+    right: 0
+    top: 0
+    color: red
 
 .members .online, .ui-draggable-dragging
   font-weight: bold
@@ -94,28 +114,29 @@ body
   cursor: move
 
 .members
-  position: absolute
+  display: inline
   font-size: 12px
-  left: 150px
-  top: 8px
+  margin-top: 5px
 
   .online, .offline
     display: inline-block
     margin-right: 5px
+    padding: 5px 7px
+
+  .online
+    border: 2px solid #d2f2ff - #111
 
   .offline
     font-style: italic
     color: #333
-    +gradient(#eee, #e5e5e5)
-    border-bottom: 1px solid #eee - #333
-    border-top: 1px solid #eee + #333
-    padding: 3px 7px
+    +gradient(#fafafa, #f0f0f0)
+    border: 2px solid #ddd
     line-height: 1
     +roundall(30px)
 
 aside
   margin: 0
-  padding-top: 40px
+  padding-top: 42px
 
 aside header, section header
   height: 30px
@@ -125,12 +146,11 @@ aside header, section header
   z-index: 1
 
 aside header
-  background: #dbdada
-  width: 280px
-  +shadow(rgba(0,0,0,.0),-3px,1px,0)
+  // background: rgba(255,255,255,.1)
+  width: 230px
   z-index: 100
   top: $headerheight
-  border-bottom: 1px solid #999
+  border-bottom: 1px solid rgba(0,0,0,.17)
 
 .loginDoor
   background-image: url(/img/bg-linen-dk.png)

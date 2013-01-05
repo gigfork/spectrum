@@ -350,7 +350,7 @@ a.logo:hover, a.logout:hover {
 
 .selectView {
   position: fixed;
-  left: 300px;
+  left: 250px;
   z-index: 200;
   padding: 0px 10px 0 170px;
   top: 0px;
@@ -451,7 +451,7 @@ a.logo:hover, a.logout:hover {
   font-weight: bold;
   border-bottom: 1px solid #eeeeee; }
 .page .addContactTitle {
-  border-bottom: 2px groove rgba(255, 255, 255, 0.3); }
+  margin-bottom: 20px; }
 .page .fieldContainer {
   clear: both;
   border-bottom: 2px groove rgba(255, 255, 255, 0.3);
@@ -521,8 +521,8 @@ h3 {
     color: #41ade0; }
 
 .welcomePage {
-  margin-left: 300px;
-  background: #fafafa;
+  margin-left: 250px;
+  background: white;
   height: 100%; }
   .welcomePage h1, .welcomePage h2, .welcomePage h3 {
     margin: 10px;
@@ -530,7 +530,7 @@ h3 {
     line-height: 1;
     color: #555555; }
   .welcomePage h1 {
-    margin-top: 20px;
+    margin-top: 0px;
     width: 410px;
     height: 130px;
     background-image: url(/img/spectrum-logo-large.png);
@@ -813,21 +813,6 @@ body {
   display: block;
   position: relative; }
 
-.cancel {
-  position: absolute;
-  top: 4px;
-  right: 10px;
-  padding: 3px;
-  line-height: 9px;
-  display: block;
-  color: white;
-  border: 1px solid white;
-  background-color: #666666; }
-  .cancel:hover {
-    color: white;
-    background-color: #bb0000;
-    cursor: pointer; }
-
 #screen {
   overflow: hidden;
   padding: 15px 15px 0 15px;
@@ -917,15 +902,10 @@ body {
   -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=white,Direction=135,Strength=0); }
 
 #messages {
-  background-color: #eeeeee;
+  background-color: white;
   min-height: 100%; }
   #messages .mainContent {
     padding: 0px; }
-  #messages header {
-    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 2px 1px 5px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.2) 2px 1px 5px;
-    box-shadow: rgba(0, 0, 0, 0.2) 2px 1px 5px;
-    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.2),Direction=135,Strength=5); }
 
 .newMessage {
   position: absolute;
@@ -939,7 +919,7 @@ body {
 
 .dragOverlay {
   position: fixed;
-  left: 300px;
+  left: 250px;
   top: 80px;
   right: 0;
   bottom: 0px;
@@ -979,11 +959,8 @@ body {
   .discussion li {
     display: block;
     position: relative;
-    margin-bottom: 1px;
-    padding: 10px 10px 10px 9px;
-    border-left: 1px solid #fafafa;
-    border-bottom: 1px solid #dddddd;
-    border-top: 1px solid white; }
+    padding: 10px;
+    border-bottom: 1px solid #fafafa; }
     .discussion li:last-child {
       margin-bottom: 52px;
       position: relative; }
@@ -992,7 +969,6 @@ body {
       width: 100%;
       height: 0px;
       background-color: white;
-      border-top: 2px solid #fafafa;
       position: absolute;
       bottom: -3px;
       left: 0; }
@@ -1112,32 +1088,33 @@ body {
     font-size: 11px;
     margin-left: 47px;
     color: #555555;
-    font-weight: 400;
-    border-bottom: 1px solid #999999; }
+    font-weight: 500; }
 
 .chatField {
   position: fixed;
   padding: 10px;
   bottom: 0;
-  left: 300px;
-  width: 100%;
-  background-image: #eeeeee;
-  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(1, #dddddd));
-  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
+  left: 250px;
+  right: 0px;
+  height: 30px;
+  background: #f5f5f5;
   display: block;
-  border-top: 1px solid white; }
+  border-top: 1px solid #dddddd; }
 
 .chatInput {
   min-width: 250px;
-  padding: 5px;
+  position: absolute;
+  left: 10px;
+  right: 163px;
   margin: 0 10px 0 0;
+  width: auto;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -khtml-border-radius: 3px;
   -o-border-radius: 3px;
   -border-radius: 3px;
   border-radius: 3px;
+  border: 1px solid #aaaaaa;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
@@ -1146,22 +1123,33 @@ body {
   display: inline-block; }
 
 .chatSend {
-  display: none; }
+  position: absolute;
+  right: 80px; }
+
+.smsSend {
+  position: absolute;
+  right: 0px; }
+
+.group .chatSend {
+  right: 0px; }
+
+.group .chatInput {
+  right: 83px; }
 
 .chatField.online .chatSend {
   display: inline-block; }
 
 aside {
-  width: 300px;
+  width: 250px;
   top: 40px;
   bottom: 0px;
   position: fixed;
   background: #c3cbce url(/img/bg-linen-lt.png);
   margin: 40px 0 0 0;
   overflow-y: scroll;
-  box-shadow: inset rgba(0, 0, 0, 0.5) 0 3px 5px;
-  -moz-box-shadow: inset rgba(0, 0, 0, 0.5) 0 3px 5px;
-  -webkit-box-shadow: inset rgba(0, 0, 0, 0.5) 0 3px 5px; }
+  box-shadow: inset rgba(0, 0, 0, 0.5) 0 1px 2px;
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.5) 0 1px 2px;
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.5) 0 1px 2px; }
   aside ul, aside li {
     list-style: none;
     margin: 0;
@@ -1184,18 +1172,19 @@ aside {
     aside li:hover {
       background-color: rgba(255, 255, 255, 0.1); }
     aside li.contact.selected {
-      background-color: rgba(0, 0, 0, 0.3);
-      box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 8px;
-      -moz-box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 8px;
-      -webkit-box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 8px;
-      border-top: 1px solid transparent;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.8); }
-      aside li.contact.selected h3 {
-        color: white;
-        text-shadow: black 0 -1px 0px;
-        -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=black,Direction=135,Strength=0); }
+      background-color: white;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+      -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+      -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.3),Direction=135,Strength=2);
+      border-bottom: 2px solid white; }
     aside li.conversation.selected {
-      background-color: rgba(255, 255, 255, 0.8); }
+      background-color: white;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+      -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+      -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.3),Direction=135,Strength=2);
+      border-bottom: 2px solid white; }
 
 #contact header nav {
   margin-top: 0px;
@@ -1312,7 +1301,7 @@ aside {
     content: "";
     height: 130%;
     width: 10px;
-    background-color: #fafafa;
+    background-color: white;
     z-index: 2; }
 
 h2 .startPhoneCall {
@@ -1325,19 +1314,10 @@ h2 .startPhoneCall {
 .conversationList li, .contactList li {
   position: relative;
   z-index: 1;
-  padding: 15px 35px 15px 30px;
+  padding: 15px 15px 15px 30px;
   border-top: 0px none;
-  border-bottom: 2px groove rgba(255, 255, 255, 0.3); }
-.conversationList h2, .contactList h2 {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 140%;
-  margin: 0;
-  padding: 0;
-  color: rgba(0, 0, 0, 0.8);
-  text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0px;
-  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.8),Direction=135,Strength=0); }
-.conversationList h3, .contactList h3 {
+  border-bottom: 2px groove rgba(255, 255, 255, 0.4); }
+.conversationList h2, .conversationList h3, .contactList h2, .contactList h3 {
   font-weight: 500;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1;
@@ -1348,15 +1328,10 @@ h2 .startPhoneCall {
   -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.7),Direction=135,Strength=0); }
 
 .conversationList li {
-  background-color: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
-  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.3),Direction=135,Strength=2);
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   position: relative;
   top: -1px; }
+  .conversationList li:first-child {
+    border-top: 0px; }
   .conversationList li h2 {
     color: #555555;
     text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0px;
@@ -1386,78 +1361,26 @@ button.close, .newMessage {
   margin-top: -7px; }
 
 button.close {
-  min-width: 20px;
+  min-width: 10px;
   background-image: transparent;
   background-image: -moz-linear-gradient(top, transparent, transparent);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, transparent));
   -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
   border: 0px none;
   padding: 0;
-  right: 0px;
+  left: 9px;
   top: 50%;
-  margin-top: -3px;
+  margin-top: -6px;
   z-index: 20000;
   cursor: pointer; }
   button.close:before {
-    margin: 0;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 100;
     color: rgba(0, 0, 0, 0.25);
     text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0px;
     -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.7),Direction=135,Strength=0); }
   button.close:hover:before {
-    color: rgba(200, 0, 0, 0.7);
-    text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0px;
-    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=0);
-    z-index: 1; }
-  button.close:hover:after {
-    content: "";
-    display: block;
-    background-color: white;
-    z-index: -1;
-    -moz-border-radius: 60px;
-    -webkit-border-radius: 60px;
-    -khtml-border-radius: 60px;
-    -o-border-radius: 60px;
-    -border-radius: 60px;
-    border-radius: 60px;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 1px;
-    top: -7px; }
-
-.selected button.close {
-  color: rgba(0, 0, 0, 0.4);
-  text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0px;
-  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(255, 255, 255, 0.7),Direction=135,Strength=0); }
-  .selected button.close:before {
-    color: #cccccc;
-    text-shadow: rgba(0, 0, 0, 0.5) 0 -1px 0px;
-    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=0); }
-  .selected button.close:hover {
-    margin-top: -4px; }
-    .selected button.close:hover:before {
-      color: rgba(200, 0, 0, 0.7);
-      text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0px;
-      -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=0);
-      z-index: 1; }
-    .selected button.close:hover:after {
-      content: "";
-      display: block;
-      background-color: white;
-      z-index: -1;
-      -moz-border-radius: 60px;
-      -webkit-border-radius: 60px;
-      -khtml-border-radius: 60px;
-      -o-border-radius: 60px;
-      -border-radius: 60px;
-      border-radius: 60px;
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      left: 1px;
-      top: -7px; }
+    color: rgba(200, 0, 0, 0.7); }
 
 .startVideoCall, .startChat, .startPhoneCall {
   display: none; }
@@ -1467,7 +1390,7 @@ button.close {
   position: absolute;
   left: 10px;
   top: 50%;
-  margin-top: -4px;
+  margin-top: -6px;
   vertical-align: middle;
   height: 6px;
   width: 2px;
@@ -1484,13 +1407,6 @@ button.close {
 .online .onlineStatus {
   background-color: #77a803;
   border-bottom: 1px solid #333333; }
-.online .startPhoneCall {
-  display: none !important; }
-.online .startVideoCall, .online .startChat {
-  display: inline-block; }
-
-.selected .onlineStatus {
-  background-color: #cccccc; }
 
 .selected.online .onlineStatus {
   background-color: #77a803;
@@ -1606,15 +1522,15 @@ ul.files {
       opacity: 0.5; }
 
 button {
-  background-image: #efefef;
-  background-image: -moz-linear-gradient(top, #efefef, #bbbbbb);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #efefef), color-stop(1, #bbbbbb));
+  background-image: #eeeeee;
+  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(1, #dddddd));
   -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
   background-color: transparent;
   border-left: 1px solid rgba(0, 0, 0, 0.05);
   border-right: 1px solid rgba(0, 0, 0, 0.05);
   border-top: 1px solid white;
-  border-bottom: 1px solid #aaaaaa;
+  border-bottom: 1px solid #dddddd;
   font-size: 12px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1673,7 +1589,7 @@ button {
     top: 6px;
     position: relative; }
 
-#addContact, #startDiscussion, #showDialer {
+#addContact, #startDiscussion {
   padding: 1px 0px 4px 0px;
   font-size: 20px;
   line-height: 21px;
@@ -1685,14 +1601,6 @@ button {
   width: 41px;
   top: 5px;
   z-index: 100; }
-
-#showDialer {
-  width: 41px;
-  font-size: 16px;
-  padding: 3px 0px 2px 10px;
-  position: absolute;
-  top: 5px;
-  left: 202px; }
 
 .plusContact {
   font-size: 14px;
@@ -1707,7 +1615,7 @@ button {
   right: 10px; }
 
 #addContact, #startDiscussion {
-  left: 252px; }
+  left: 202px; }
 
 a.delete {
   position: absolute;
@@ -1834,10 +1742,10 @@ a.delete {
 .startChat {
   padding: 6px 10px 4px 10px; }
 
-.videoInvite, .startNewGroupChat {
+.videoInvite, .startNewGroupChat, .showDialer {
   background: #9a9a9a url(/img/semi-transparent-linen.png);
   padding: 7px 10px 7px 10px !important; }
-  .videoInvite:active, .startNewGroupChat:active {
+  .videoInvite:active, .startNewGroupChat:active, .showDialer:active {
     top: 3px; }
 
 .videoInvite {
@@ -1850,12 +1758,18 @@ a.delete {
   width: auto;
   position: absolute;
   left: 10px;
-  top: 3px; }
+  top: 3px;
+  width: 150px; }
+
+.showDialer {
+  position: absolute;
+  top: 3px;
+  width: 150px; }
 
 header .startActions {
   left: 10px !important; }
 
-.videoInvite, #navButton, .startNewGroupChat {
+.videoInvite, #navButton, .startNewGroupChat, .showDialer {
   z-index: 200000;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -1876,9 +1790,8 @@ header .startActions {
   margin-top: 1px;
   border-top: 1px solid #696969;
   border-bottom: 1px solid #090909; }
-  .videoInvite:active, #navButton:active, .startNewGroupChat:active {
-    border-bottom: 1px solid #41ade0;
-    border-top: 1px solid #41ade0;
+  .videoInvite:active, #navButton:active, .startNewGroupChat:active, .showDialer:active {
+    border: 1px solid rgba(0, 0, 0, 0.5);
     box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 7px;
     -moz-box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 7px;
     -webkit-box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 7px;
@@ -2007,7 +1920,10 @@ header .startActions {
 .addUsers {
   position: absolute;
   right: 0px;
-  top: 5px; }
+  top: 7px;
+  z-index: 10000;
+  padding: 5px;
+  color: green; }
 
 input:-webkit-input-placeholder {
   font-weight: 100;
@@ -2078,7 +1994,7 @@ section .search {
     font-weight: bold; }
 
 body {
-  background-color: #fafafa;
+  background-color: white;
   font-family: "Helvetica Neue", "HelveticaNeue", "Helvetica-Neue", "HelveticaNeue-Light", Arial, sans-serif;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -2088,7 +2004,7 @@ body {
   -webkit-tap-highlight-color: transparent; }
 
 .wrap {
-  background-color: #fafafa;
+  background-color: white;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -2107,7 +2023,6 @@ body {
   overflow: hidden;
   margin-top: 80px;
   margin-left: 0px;
-  background-color: #fafafa;
   padding: 0;
   width: 100%;
   -moz-box-sizing: border-box;
@@ -2127,8 +2042,10 @@ body {
   position: fixed;
   width: 100%;
   left: 0;
-  background-image: url(/img/bg-linen-dk.png);
-  border-bottom: 1px solid white;
+  background-image: #404040;
+  background-image: -moz-linear-gradient(top, #404040, #4d4d4d);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #404040), color-stop(1, #4d4d4d));
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -2143,18 +2060,18 @@ body {
     left: 0; }
 
 .mainContent {
-  margin-left: 300px;
+  position: relative;
+  margin-left: 250px;
   padding: 20px 20px 100px 20px; }
   .mainContent header {
-    background-image: #f3f3f3;
-    background-image: -moz-linear-gradient(top, #f3f3f3, #f0f0f0);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f3f3f3), color-stop(1, #f0f0f0));
-    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
     right: 0;
-    left: 300px;
-    border-bottom: 1px solid #c4c6c8; }
+    left: 250px;
+    border-bottom: 1px solid #eeeeee;
+    overflow: hidden;
+    background: #f5f5f5; }
 
 .topic {
+  margin-top: 2px;
   border: 1px solid #aaaaaa;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -2162,8 +2079,27 @@ body {
   -o-border-radius: 3px;
   -border-radius: 3px;
   border-radius: 3px;
-  width: 120px;
-  background: rgba(255, 255, 255, 0.5); }
+  width: 80px;
+  -webkit-transition: width 0.3s;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  z-index: 1000;
+  border: 1px transparent;
+  border-bottom: 1px solid #eeeeee; }
+  .topic:hover {
+    background: #eeeeee; }
+  .topic:focus {
+    width: 99%;
+    background: #eeeeee; }
+  .topic:after {
+    content: "...";
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: red; }
 
 .members .online, .ui-draggable-dragging {
   font-weight: bold;
@@ -2188,23 +2124,23 @@ body {
   cursor: move; }
 
 .members {
-  position: absolute;
+  display: inline;
   font-size: 12px;
-  left: 150px;
-  top: 8px; }
+  margin-top: 5px; }
   .members .online, .members .offline {
     display: inline-block;
-    margin-right: 5px; }
+    margin-right: 5px;
+    padding: 5px 7px; }
+  .members .online {
+    border: 2px solid #c1e1ee; }
   .members .offline {
     font-style: italic;
     color: #333333;
-    background-image: #eeeeee;
-    background-image: -moz-linear-gradient(top, #eeeeee, #e5e5e5);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(1, #e5e5e5));
+    background-image: #fafafa;
+    background-image: -moz-linear-gradient(top, #fafafa, #f0f0f0);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fafafa), color-stop(1, #f0f0f0));
     -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
-    border-bottom: 1px solid #bbbbbb;
-    border-top: 1px solid white;
-    padding: 3px 7px;
+    border: 2px solid #dddddd;
     line-height: 1;
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
@@ -2215,7 +2151,7 @@ body {
 
 aside {
   margin: 0;
-  padding-top: 40px; }
+  padding-top: 42px; }
 
 aside header, section header {
   height: 30px;
@@ -2225,15 +2161,10 @@ aside header, section header {
   z-index: 1; }
 
 aside header {
-  background: #dbdada;
-  width: 280px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0) -3px 1px 0px;
-  -moz-box-shadow: rgba(0, 0, 0, 0) -3px 1px 0px;
-  box-shadow: rgba(0, 0, 0, 0) -3px 1px 0px;
-  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0),Direction=135,Strength=0);
+  width: 230px;
   z-index: 100;
   top: 40px;
-  border-bottom: 1px solid #999999; }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.17); }
 
 .loginDoor {
   background-image: url(/img/bg-linen-dk.png);
@@ -2523,241 +2454,6 @@ body.videocall .wrap > header, body.videocall .wrap > aside, body.videocall #pag
     top: auto;
     bottom: 20px !important; }
 
-@media (max-width: 800px) {
-  section #search {
-    width: 20%; }
-
-  ul.files button {
-    min-width: 27px;
-    width: 0px;
-    white-space: nowrap;
-    overflow: hidden;
-    margin-right: 10px; }
-  ul.files button.deleteFile {
-    position: relative;
-    right: -5px; }
-  ul.files .doStuff {
-    width: 80px;
-    right: -10px; }
-  ul.files li a {
-    padding: 7px 80px 7px 10px; } }
-@media (max-width: 620px) {
-  #addFile {
-    display: none; }
-
-  .wrap > header {
-    display: none; }
-
-  aside {
-    margin-top: 0; }
-    aside header {
-      width: 100%; }
-    aside:after {
-      display: none; }
-
-  #pages:after {
-    display: none; }
-
-  aside header {
-    position: fixed !important;
-    z-index: 1000; }
-    aside header #search {
-      wdith: 150px; }
-
-  #pages header {
-    position: fixed; }
-
-  body {
-    overflow-x: hidden;
-    overflow-y: visible;
-    padding: 0 !important; }
-
-  .wrap {
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    -khtml-border-radius: 0px;
-    -o-border-radius: 0px;
-    -border-radius: 0px;
-    border-radius: 0px;
-    border-top: 0px;
-    width: auto; }
-
-  #pages, .toggleView, .toggleWrap, .editTools {
-    -webkit-transition: -webkit-transform 0.25s;
-    -moz-transition: -moz-transform 0.3s;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translate3d(0, 0, 0); }
-
-  .editTools {
-    right: -20px; }
-
-  .fieldContainer label {
-    width: 105px !important; }
-
-  .toggleView, .backToFiles {
-    display: block;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    width: 32px;
-    height: 32px;
-    padding: 2px 0px 0px 6px;
-    margin: 7px 0 0 10px;
-    min-width: 32px; }
-
-  .backToFiles {
-    margin-top: -8px;
-    margin-left: 0px; }
-    .backToFiles:after {
-      content: "d" !important;
-      font-family: "Pictos Custom";
-      -webkit-font-smoothing: antialiased;
-      background-image: #efefef;
-      background-image: -moz-linear-gradient(top, #efefef, #bbbbbb);
-      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #efefef), color-stop(1, #bbbbbb));
-      -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
-      border-left: 1px solid rgba(0, 0, 0, 0.05);
-      border-right: 1px solid rgba(0, 0, 0, 0.05);
-      border-top: 1px solid white;
-      border-bottom: 1px solid #aaaaaa;
-      font-size: 16px;
-      -moz-border-radius: 5px;
-      -webkit-border-radius: 5px;
-      -khtml-border-radius: 5px;
-      -o-border-radius: 5px;
-      -border-radius: 5px;
-      border-radius: 5px;
-      display: inline-block;
-      text-align: center;
-      padding: 7px 11px;
-      color: rgba(0, 0, 0, 0.8);
-      font-weight: bold;
-      text-shadow: white 0 1px 0px;
-      -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=white,Direction=135,Strength=0);
-      min-width: 0px;
-      width: 10px;
-      height: 16px; }
-
-  .toggleView {
-    left: 0; }
-    .toggleView:after {
-      display: none; }
-
-  .toggleWrap {
-    display: block;
-    top: 0px;
-    left: 0;
-    height: 1px;
-    padding: 10px;
-    position: fixed;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    z-index: 1000;
-    width: 100%; }
-
-  .wrap {
-    overflow-x: hidden; }
-
-  header {
-    background-image: transparent;
-    background-image: -moz-linear-gradient(top, transparent, transparent);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, transparent));
-    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top', EndColorStr='$bottom');
-    border: 0px;
-    position: fixed;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    -khtml-border-radius: 0px;
-    -o-border-radius: 0px;
-    -border-radius: 0px;
-    border-radius: 0px;
-    z-index: 1;
-    background: #c3cbce url(/img/paper.jpg);
-    width: 100%;
-    height: 48px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
-    box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
-    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=5); }
-    header select {
-      margin-top: 0;
-      top: 10px; }
-    header input {
-      margin-left: 0;
-      left: 10px;
-      top: 7px;
-      max-width: 1000px;
-      width: 35%;
-      font-size: 14px;
-      padding: 9px 10px 6px 10px; }
-    header button {
-      padding: 8px; }
-      header button#addContact {
-        position: absolute;
-        right: 18%;
-        top: 8px;
-        left: auto; }
-
-  #pages {
-    background-color: #fafafa;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 60px 10px 100px 10px;
-    z-index: 1000;
-    position: fixed;
-    overflow-y: auto;
-    left: 0;
-    top: 0;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
-    box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
-    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Color=rgba(0, 0, 0, 0.5),Direction=135,Strength=5);
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box; }
-
-  .page {
-    margin: 0;
-    padding: 10px 0; }
-    .page #search {
-      width: 150px;
-      margin: 6px 0 0 50px; }
-    .page #addFile {
-      top: 9px;
-      right: 0px; }
-    .page .backToFiles {
-      left: 50px;
-      z-index: 100000; }
-
-  .mainContent {
-    margin-left: 0; }
-
-  aside {
-    border-left: 0px none;
-    top: 0px;
-    bottom: 0;
-    padding-top: 46px;
-    width: 100%;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border-bottom: 0px transparent; }
-    aside li:last-child {
-      margin-bottom: 100px; }
-
-  aside header, section header {
-    position: absolute;
-    left: 0;
-    top: 0; }
-
-  .drawerOpen #pages, .drawerOpen .toggleWrap {
-    -webkit-transform: translateX(85%);
-    -moz-transform: translateX(85%); }
-
-  .drawerOpen .editTools {
-    -webkit-transform: translateX(100%);
-    -moz-transform: translateX(100%); } }
 footer, .updateFile {
   display: none; }
 
@@ -2766,4 +2462,10 @@ footer, .updateFile {
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0; }
+  right: 0;
+  background-color: #333333;
+  background-image: url(/img/bg-linen-dk.png);
+  display: block;
+  z-index: 1000; }
+  .loginDoors.open {
+    display: none; }

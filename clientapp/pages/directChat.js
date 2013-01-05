@@ -54,24 +54,20 @@ module.exports = PageView.extend({
     sendCurrent: function () {
         var val = this.$input.val();
         if (val) {
-            app.chatSession.sendDirectChat(this.model.getCallableNumber(), val);
-            this.$input.val('');
-            /*
-            if (contact.get('online')) {
-                            
+            if (this.model.get('online')) {
+                app.chatSession.sendDirectChat(this.model.getCallableNumber(), val);         
             } else {
                 this.sendCurrentAsSMS();
             }
-            */
+            this.$input.val('');
         }
     },
     sendCurrentAsSMS: function () {
-        var val = this.$input.val(),
-            contact = this.model.getRelatedContact();
-        if (val && contact) {
-            contact.sms(this.$input.val());
+        var val = this.$input.val();
+        if (val) {
+            this.model.sms(this.$input.val());
             this.$input.val('');
-            this.model.messages.add({to: contact.id, body: val, me: true, type: 'sms'});
+            this.model.messages.add({to: this.model.id, body: val, me: true, type: 'sms'});
         }
     },
     handleChatSendClick: function (e) {

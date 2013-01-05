@@ -26,9 +26,8 @@
             <header>
                 <a href="/" class="logo">spectrum</a>
                 <nav class="selectView">
+                    <button id="showDialer" class="startCall showDialer" href="#" data-icon="P" title='Show Dial Pad'>Make a Call</button>
                     <button class="startNewGroupChat" data-icon="z">New Group Chat</button>
-                    <a class="selectFiles" href="/files" data-icon="d">files</a>
-                    <a class="selectLocation" href="/location">location</a>
                 </nav>
                 <!--a class="sendInvite" href="/send"><button class="videoInvite" data-icon="V">invite</button></a-->
                 <nav id="navActions">
@@ -183,30 +182,8 @@
     <!--     contact = |, messages = z, files = d, apps = l, call = k, search = n, dialer = P, call = O, video = V, inbox = B -->
     <script id="homePage" type="text/x-icanhaz">
         <div id="home" class="page">
-            <div class="mainContent"></div>
             <div class="welcomePage">
-                <div class="aboutSpectrum">
-                    <div class="aboutMessaging">
-                        <span data-icon="z"></span>
-                        <h4>Messaging</h4>
-                        <p>Message your contact list.</p>
-                    </div>
-                    <div class="aboutPhone">
-                        <span data-icon="O"></span>
-                        <h4>Phone calls</h4>
-                        <p>Call any phone number.</p>
-                    </div>
-                    <div class="aboutVideo">
-                        <span data-icon="V"></span>
-                        <h4>Video chat</h4>
-                        <p>Video chat from your browser.</p>
-                    </div>
-                    <div class="aboutFiles">
-                        <span data-icon="d"></span>
-                        <h4>File sharing</h4>
-                        <p>Store and share your files.</p>
-                    </div>
-                </div>
+                <h1>Spectrum</h1>
             </div>
         </div>
     </script>
@@ -221,20 +198,17 @@
             <div class="mainContent">
                 <header>
                     <input class="topic"></input>
-                    <button class="addUsers" data-icon="z">Add Users</button>
                     <div class="members"></div>
+                    <button class="addUsers">Add People</button> 
                 </header>            
                 <ul class="discussion">
                 {{#messages}}
                     {{> chatMessage}}
                 {{/messages}}
                 </ul>
-                <form class="chatField">
+                <form class="chatField group">
                     <input class="chatInput" />
                     <button class="chatSend" data-icon="z">Chat</button>
-                    {{#contact.getCallableNumber}}
-                    <button class="smsSend" data-icon="k">SMS</button>
-                    {{/contact.getCallableNumber}}
                 </form>
             </div>
         </div>
@@ -253,8 +227,7 @@
                 <header>
                     <h1 class="talkyTalkerton">{{contact.fullName}}</h1>
                     <div class="startActions">
-                        <button class="viewProfile" data-icon="z">view profile</button>
-                        <button class="call startVideoCall" data-icon="V">Video</button>
+                        <button class="viewProfile">View contact details &raquo;</button>
                     </div>
                 </header>            
                 <ul class="discussion">
@@ -279,7 +252,6 @@
         <li class="conversation" data-id="conversation_{{id}}">
             <h2></h2>
             <button class="close" data-icon="Z" title="Close Conversation"></button>
-            <span class="newMessage new" data-icon="C"></span>
         </li>
     </script>
 
@@ -287,11 +259,9 @@
     <script id="contactListItem" type="text/x-icanhaz">
         <li class="contact {{online}}{{#getCallableNumber}} hasPhone{{/getCallableNumber}}" data-id="contact_{{id}}">
             <h3>{{getContactName}}</h3>
-            <span class="canVideo" data-icon="V"></span>
             <span class="onlineStatus"></span>
             <div class="startActions">
                 <button class="call startPhoneCall" data-icon="P" title="Start Phone Call"></button>
-                <button class="call startVideoCall" data-icon="V" title="Start Video Call"></button>
             </div>
         </li>
     </script>    
@@ -309,8 +279,10 @@
         <li class="{{#me}}me {{/me}} {{type}}">
             <div class="chatMsg">
                 <img class="userImage" src="{{picUrl}}" />
-                <h4 class="userName">{{from}}</h4>
-                <span class="time">{{time}}</span>
+                <div class="stamp">
+                    <span class="userName">{{from}}</span>
+                    <span class="time">{{time}}</span>
+                </div>
                 <p>{{body}}</p>
             </div>
         </li>  
@@ -321,7 +293,6 @@
         <aside>
             <header>
                 <input class="search" id="searchContacts" type="search" placeholder="Filter">
-                <button id="showDialer" class="startCall showDialer" href="#" data-icon="P" title='Show Dial Pad'></button>
                 <button id="addContact" title="Add Contact">+<span class="plusContact" data-icon="|"></span></button>
                                 
             </header>
@@ -405,7 +376,7 @@
         <div id="contact">
             <header>
                 <div class="startActions {{online}}">
-                    <button class="backToChat" data-icon="z">Back to conversation</button>
+                    <button class="backToChat">&laquo; Back to conversation</button>
                 </div>
                 <nav>
                     <button data-icon="y" class="deleteContact">delete</button>
@@ -432,10 +403,6 @@
                 <h2 data-icon="z">IM: {{im}}</h2>
                 {{/im}}
             </div>
-            <div class="doStuff">
-                <button data-icon="y" class="deleteContact">Delete</button>
-                <button data-icon="m" class="editContact">Update</button>
-            </div>
         </div>
     </script>
 
@@ -443,7 +410,6 @@
 
     <script id="form" type="text/x-icanhaz">
         <form id="{{id}}_form">
-            <h1 class="addContactTitle">Add a contact</h1>
             {{#fields}}
             <div id="{{id}}_parent" class="fieldContainer clearfix">
                 {{#errors}}
@@ -469,7 +435,6 @@
             <div class="clearfix"></div>
             <div class="formActions">
                 <button type="submit" data-icon="w" class="submit">{{submitText}}{{^submitText}}Save{{/submitText}}</button>
-                <button type="reset" class="cancel">Cancel</button>
             </div>
         </form>
     </script>

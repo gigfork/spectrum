@@ -121,7 +121,7 @@ module.exports = BaseModel.extend({
     sms: function (message) {
         var number = this.getCallableNumber();
         if (number) {
-            $.post('/proxy/a1/messages/messages', {
+            $.post('/apiproxy/a1/messages/messages?access_token=' + app.get('accessToken'), {
                 text: message,
                 recipient: number
             });

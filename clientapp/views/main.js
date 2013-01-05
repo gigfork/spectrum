@@ -160,7 +160,7 @@ module.exports = BaseView.extend({
     },
     handleAccessTokenChange: function (model, val) {
         var hasToken = !!app.get('accessToken'),
-            doors = $('.loginDoor');
+            doors = $('.loginDoors');
         
         if (hasToken) {
             doors.addClass('open');

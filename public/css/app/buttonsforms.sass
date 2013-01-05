@@ -3,12 +3,12 @@
 // BUTTON STUFF
 
 button
-  +gradient(#efefef,#bbb)
+  +gradient(#eee,#ddd)
   background-color: transparent
   border-left: 1px solid rgba(0,0,0,.05)
   border-right: 1px solid rgba(0,0,0,.05)
   border-top: 1px solid #fff
-  border-bottom: 1px solid #aaa
+  border-bottom: 1px solid #ddd
   font-size: 12px
   +roundall(5px)
   display: inline-block
@@ -52,7 +52,7 @@ button
     top: 6px
     position: relative
 
-#addContact, #startDiscussion, #showDialer
+#addContact, #startDiscussion
   padding: 1px 0px 4px 0px
   font-size: 20px
   line-height: 21px
@@ -64,14 +64,6 @@ button
   width: 41px
   top: 5px
   z-index: 100
-
-#showDialer
-  width: 41px
-  font-size: 16px
-  padding: 3px 0px 2px 10px
-  position: absolute
-  top: 5px
-  left: 202px
 
 .plusContact
   font-size: 14px
@@ -86,7 +78,7 @@ button
   right: 10px
 
 #addContact, #startDiscussion
-  left: 252px
+  left: 202px
 
 a.delete
   position: absolute
@@ -195,7 +187,7 @@ a.delete
 .startChat
   padding: 6px 10px 4px 10px
 
-.videoInvite, .startNewGroupChat
+.videoInvite, .startNewGroupChat, .showDialer
   background: #9a9a9a url(/img/semi-transparent-linen.png)
   padding: 7px 10px 7px 10px !important
   &:active
@@ -212,11 +204,17 @@ a.delete
   position: absolute
   left: 10px
   top: 3px
+  width: 150px
+
+.showDialer
+  position: absolute
+  top: 3px
+  width: 150px
 
 header .startActions
   left: 10px !important
 
-.videoInvite, #navButton, .startNewGroupChat
+.videoInvite, #navButton, .startNewGroupChat, .showDialer
   z-index: 200000
   +roundall(4px)
   +gradient(#4a4a4a,#333)
@@ -231,9 +229,7 @@ header .startActions
     bottom: 1px solid #090909
 
   &:active
-    border:
-      bottom: 1px solid $blue 
-      top: 1px solid $blue  
+    border: 1px solid rgba(0,0,0,.5)
     +inner_shadow(rgba(0,0,0,.5),0,0,7)
     +gradient($blue + #222, $blue - #222)
     margin-top: 2px
@@ -309,9 +305,10 @@ header .startActions
 .addUsers
   position: absolute
   right: 0px
-  top: 5px
-
-
+  top: 7px
+  z-index: 10000
+  padding: 5px
+  color: green
 
 
 // FORM ELEMENTS

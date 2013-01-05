@@ -43,6 +43,9 @@ module.exports = BaseView.extend({
             appendTo: 'body'
         });
 
+        // makes contact list searchable
+        this.$('.contactList').listFilter('#searchContacts');
+
         this.collectomatic(app.conversations, ConversationListItemView, {containerEl: this.$('.conversationList')[0]});
 
         return this;

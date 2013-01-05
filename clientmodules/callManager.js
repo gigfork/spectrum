@@ -3,6 +3,7 @@ var att = require('att'),
     _ = require('underscore'),
     metrics = require('metrics'),
     phoney = require('phoney'),
+    Ringer = require('ringer'),
     getQueryParam = require('getQueryParam');
 
 
@@ -15,15 +16,7 @@ module.exports = {
             onIncomingCall: this.onInvite.bind(this)
         });
 
-        // init some sounds
-        this.ringtoneSound = new Audio();
-        this.ringtoneSound.src = '/audio/ringtone.wav';
-        this.ringtoneSound.loop = true;
-        this.ringtoneSound.load();
-        this.callingSound = new Audio();
-        this.callingSound.src = '/audio/calling.wav';
-        this.callingSound.loop = true;
-        this.callingSound.load();
+        new Ringer(this.att);
 
         return;
     },
@@ -111,7 +104,6 @@ module.exports = {
         metrics.track('call ended');
 
         this._clearState();
-        this._stopAudio();
     },
 
     // handles hangup of remote caller if we never answered it locally
@@ -123,14 +115,6 @@ module.exports = {
     _reset: function () {
         this._clearState();
         this._clearCalls();
-        this._stopAudio();
-    },
-
-    _stopAudio: function () {
-        this.ringtoneSound.pause();
-        this.ringtoneSound.currentTime = 0;
-        this.callingSound.pause();
-        this.callingSound.currentTime = 0;
     },
 
     _clearState: function () {
@@ -147,20 +131,16 @@ module.exports = {
         app.set({
             callStatus: 'local'
         });
-        this._stopAudio();
     },
 
     handleIncomingCall: function (call) {
         console.log('GOT INCOMING CALL', call);
         var call = app.incomingCall = call,
-            callNumber = call.recipient.split('@')[0].split('sip:')[1],
+            callNumber = call.initiator.split('@')[0],
             caller = app.contacts.findContact(callNumber),
             self = this;
 
         app.set('callStatus', 'incoming');
-
-        // play our audio
-        this.ringtoneSound.play();
        
         if (caller) {
             app.set({
@@ -184,7 +164,7 @@ module.exports = {
             phoneNumber, 
             contact;
         
-        this.callingSound.play();
+        console.log('GOT NUMBER', number);
 
         app.set({
             callStatus: 'calling',
@@ -213,6 +193,8 @@ module.exports = {
                 });
             }
         }
+
+        console.log("CALLING", phoneNumber);
 
         //Phone number technically could still be blank here
         app.activeCall = this.att.dial(phoneNumber);

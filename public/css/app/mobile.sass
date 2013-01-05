@@ -1,224 +1,224 @@
-@import ../_define
+// @import ../_define
 
-@media (max-width: 800px)
+// @media (max-width: 800px)
   
-  section #search
-    width: 20%
+//   section #search
+//     width: 20%
 
-  ul.files
-    button
-      min-width: 27px
-      width: 0px
-      white-space: nowrap
-      overflow: hidden
-      margin-right: 10px
-    button.deleteFile
-      position: relative
-      right: -5px
-    .doStuff
-      width: 80px
-      right: -10px
-    li a
-      padding: 7px 80px 7px 10px
+//   ul.files
+//     button
+//       min-width: 27px
+//       width: 0px
+//       white-space: nowrap
+//       overflow: hidden
+//       margin-right: 10px
+//     button.deleteFile
+//       position: relative
+//       right: -5px
+//     .doStuff
+//       width: 80px
+//       right: -10px
+//     li a
+//       padding: 7px 80px 7px 10px
 
-@media (max-width: 620px)
+// @media (max-width: 620px)
 
-  $headerheight: 30px
+//   $headerheight: 30px
 
-  #addFile
-    display: none
+//   #addFile
+//     display: none
 
-  .wrap > header
-    display: none
+//   .wrap > header
+//     display: none
 
-  aside
-    margin-top: 0
+//   aside
+//     margin-top: 0
 
-    header
-      width: 100%
+//     header
+//       width: 100%
 
-    &:after
-      display: none
+//     &:after
+//       display: none
 
-  #pages:after  
-    display: none    
-  aside header 
-    position: fixed !important
-    z-index: 1000
-    #search
-      wdith: 150px
+//   #pages:after  
+//     display: none    
+//   aside header 
+//     position: fixed !important
+//     z-index: 1000
+//     #search
+//       wdith: 150px
 
-  #pages header
-    position: fixed    
+//   #pages header
+//     position: fixed    
 
-  body
-    overflow-x: hidden
-    overflow-y: visible
-    padding: 0 !important
+//   body
+//     overflow-x: hidden
+//     overflow-y: visible
+//     padding: 0 !important
 
-  .wrap
-    +roundall(0px)
-    border-top: 0px
-    width: auto
+//   .wrap
+//     +roundall(0px)
+//     border-top: 0px
+//     width: auto
 
-  #pages, .toggleView, .toggleWrap, .editTools
-    -webkit-transition: -webkit-transform .25s
-    -moz-transition: -moz-transform .3s        
-    -webkit-backface-visibility: hidden
-    -webkit-transform: translate3d(0,0,0)
+//   #pages, .toggleView, .toggleWrap, .editTools
+//     -webkit-transition: -webkit-transform .25s
+//     -moz-transition: -moz-transform .3s        
+//     -webkit-backface-visibility: hidden
+//     -webkit-transform: translate3d(0,0,0)
 
-  .editTools
-    right: -20px
+//   .editTools
+//     right: -20px
 
-  .fieldContainer label
-    width: 105px !important
+//   .fieldContainer label
+//     width: 105px !important
 
-  .toggleView, .backToFiles
-    display: block
-    font-size: 16px
-    -webkit-font-smoothing: antialiased
-    width: 32px
-    height: 32px
-    padding: 2px 0px 0px 6px
-    margin: 7px 0 0 10px
-    min-width: 32px
+//   .toggleView, .backToFiles
+//     display: block
+//     font-size: 16px
+//     -webkit-font-smoothing: antialiased
+//     width: 32px
+//     height: 32px
+//     padding: 2px 0px 0px 6px
+//     margin: 7px 0 0 10px
+//     min-width: 32px
 
-  .backToFiles
-    margin-top: -8px
-    margin-left: 0px
-    &:after
-      content: "d" !important
-      font-family: 'Pictos Custom'
-      -webkit-font-smoothing: antialiased
-      +gradient(#efefef,#bbb)
-      border-left: 1px solid rgba(0,0,0,.05)
-      border-right: 1px solid rgba(0,0,0,.05)
-      border-top: 1px solid #fff
-      border-bottom: 1px solid #aaa
-      font-size: 16px
-      +roundall(5px)
-      display: inline-block
-      text-align: center
-      padding: 7px 11px
-      color: rgba(0,0,0,.8)
-      font-weight: bold
-      +text_shadow(rgba(255,255,255,1),0,1px,0)
-      min-width: 0px
-      width: 10px
-      height: 16px
+//   .backToFiles
+//     margin-top: -8px
+//     margin-left: 0px
+//     &:after
+//       content: "d" !important
+//       font-family: 'Pictos Custom'
+//       -webkit-font-smoothing: antialiased
+//       +gradient(#efefef,#bbb)
+//       border-left: 1px solid rgba(0,0,0,.05)
+//       border-right: 1px solid rgba(0,0,0,.05)
+//       border-top: 1px solid #fff
+//       border-bottom: 1px solid #aaa
+//       font-size: 16px
+//       +roundall(5px)
+//       display: inline-block
+//       text-align: center
+//       padding: 7px 11px
+//       color: rgba(0,0,0,.8)
+//       font-weight: bold
+//       +text_shadow(rgba(255,255,255,1),0,1px,0)
+//       min-width: 0px
+//       width: 10px
+//       height: 16px
 
-  .toggleView
-    left: 0
-    &:after
-      display: none
+//   .toggleView
+//     left: 0
+//     &:after
+//       display: none
 
-  .toggleWrap
-    display: block
-    top: 0px
-    left: 0
-    height: 1px
-    padding: 10px
-    position: fixed
-    -moz-box-sizing: border-box
-    -webkit-box-sizing: border-box
-    box-sizing: border-box
-    z-index: 1000
-    width: 100%
+//   .toggleWrap
+//     display: block
+//     top: 0px
+//     left: 0
+//     height: 1px
+//     padding: 10px
+//     position: fixed
+//     -moz-box-sizing: border-box
+//     -webkit-box-sizing: border-box
+//     box-sizing: border-box
+//     z-index: 1000
+//     width: 100%
 
-  .wrap
-    overflow-x: hidden
+//   .wrap
+//     overflow-x: hidden
 
-  header
-    +gradient(transparent,transparent)
-    border: 0px
-    position: fixed
-    +roundall(0px)
-    z-index: 1
-    background: #c3cbce url(/img/paper.jpg)
-    width: 100%
-    height: 48px
-    +shadow(rgba(0,0,0,.5),0,0,5)
+//   header
+//     +gradient(transparent,transparent)
+//     border: 0px
+//     position: fixed
+//     +roundall(0px)
+//     z-index: 1
+//     background: #c3cbce url(/img/paper.jpg)
+//     width: 100%
+//     height: 48px
+//     +shadow(rgba(0,0,0,.5),0,0,5)
 
-    select
-      margin-top: 0
-      top: 10px
+//     select
+//       margin-top: 0
+//       top: 10px
 
-    input
-      margin-left: 0
-      left: 10px
-      top: 7px
-      max-width: 1000px
-      width: 35%
-      font-size: 14px
-      padding: 9px 10px 6px 10px
+//     input
+//       margin-left: 0
+//       left: 10px
+//       top: 7px
+//       max-width: 1000px
+//       width: 35%
+//       font-size: 14px
+//       padding: 9px 10px 6px 10px
 
-    button
-      padding: 8px
+//     button
+//       padding: 8px
 
-      &#addContact
-        position: absolute
-        right: 18%
-        top: 8px
-        left: auto
+//       &#addContact
+//         position: absolute
+//         right: 18%
+//         top: 8px
+//         left: auto
 
-  #pages
-    background-color: #fafafa
-    width: 100%
-    height: 100%
-    margin: 0
-    padding: 60px 10px 100px 10px
-    z-index: 1000
-    position: fixed
-    overflow-y: auto
-    left: 0
-    top: 0
-    +shadow(rgba(0,0,0,.5),0,0,5)
-    -moz-box-sizing: border-box
-    -webkit-box-sizing: border-box
-    box-sizing: border-box
+//   #pages
+//     background-color: #fafafa
+//     width: 100%
+//     height: 100%
+//     margin: 0
+//     padding: 60px 10px 100px 10px
+//     z-index: 1000
+//     position: fixed
+//     overflow-y: auto
+//     left: 0
+//     top: 0
+//     +shadow(rgba(0,0,0,.5),0,0,5)
+//     -moz-box-sizing: border-box
+//     -webkit-box-sizing: border-box
+//     box-sizing: border-box
 
-  .page
-    margin: 0
-    padding: 10px 0
+//   .page
+//     margin: 0
+//     padding: 10px 0
 
-    #search
-      width: 150px
-      margin: 6px 0 0 50px
+//     #search
+//       width: 150px
+//       margin: 6px 0 0 50px
 
-    #addFile  
-      top: 9px
-      right: 0px
+//     #addFile  
+//       top: 9px
+//       right: 0px
 
-    .backToFiles
-      left: 50px
-      z-index: 100000
+//     .backToFiles
+//       left: 50px
+//       z-index: 100000
 
-  .mainContent
-    margin-left: 0
+//   .mainContent
+//     margin-left: 0
 
-  aside
-    border-left: 0px none
-    top: 0px
-    bottom: 0
-    padding-top: 46px
-    width: 100%
-    -moz-box-sizing: border-box
-    -webkit-box-sizing: border-box
-    box-sizing: border-box
-    border-bottom: 0px transparent
+//   aside
+//     border-left: 0px none
+//     top: 0px
+//     bottom: 0
+//     padding-top: 46px
+//     width: 100%
+//     -moz-box-sizing: border-box
+//     -webkit-box-sizing: border-box
+//     box-sizing: border-box
+//     border-bottom: 0px transparent
 
-    li:last-child
-      margin-bottom: 100px
+//     li:last-child
+//       margin-bottom: 100px
 
-  aside header, section header
-    position: absolute
-    left: 0
-    top: 0
+//   aside header, section header
+//     position: absolute
+//     left: 0
+//     top: 0
 
-  .drawerOpen #pages, .drawerOpen .toggleWrap
-    -webkit-transform: translateX(85%)
-    -moz-transform: translateX(85%)
+//   .drawerOpen #pages, .drawerOpen .toggleWrap
+//     -webkit-transform: translateX(85%)
+//     -moz-transform: translateX(85%)
 
-  .drawerOpen .editTools
-    -webkit-transform: translateX(100%)
-    -moz-transform: translateX(100%)  
+//   .drawerOpen .editTools
+//     -webkit-transform: translateX(100%)
+//     -moz-transform: translateX(100%)  
