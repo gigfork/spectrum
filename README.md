@@ -37,7 +37,7 @@ npm install .
 
 ### Run Spectrum
 ```
-node app.js
+node server.js
 ```
 
 
